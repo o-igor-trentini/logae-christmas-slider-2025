@@ -1,27 +1,35 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
+import { useState } from 'react';
 
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
 
 interface CardColaboradorProps {
-  id: string
-  foto: string
-  nome: string
-  funcao: string
-  time: string
-  descricao: string
-  onClick: () => void
+  id: string;
+  foto: string;
+  nome: string;
+  funcao: string;
+  time: string;
+  descricao: string;
+  onClick: () => void;
 }
 
-export function CardColaborador({ id, foto, nome, funcao, time, descricao, onClick }: CardColaboradorProps) {
-  const [isHovering, setIsHovering] = useState(false)
-  const [_mouseOverCount, setMouseOverCount] = useState(0)
+export function CardColaborador({
+  id,
+  foto,
+  nome,
+  funcao,
+  time,
+  descricao,
+  onClick,
+}: CardColaboradorProps) {
+  const [isHovering, setIsHovering] = useState(false);
+  const [_mouseOverCount, setMouseOverCount] = useState(0);
 
   const handleMouseEnter = () => {
-    setIsHovering(true)
-    setMouseOverCount((prev) => prev + 1)
-  }
+    setIsHovering(true);
+    setMouseOverCount((prev) => prev + 1);
+  };
 
   return (
     <motion.div
@@ -50,7 +58,11 @@ export function CardColaborador({ id, foto, nome, funcao, time, descricao, onCli
               src={foto}
               alt={nome}
               className='w-full h-48 object-cover rounded-lg'
-              animate={isHovering ? { scale: 1.08, rotate: 1 } : { scale: 1, rotate: 0 }}
+              animate={
+                isHovering
+                  ? { scale: 1.08, rotate: 1 }
+                  : { scale: 1, rotate: 0 }
+              }
               transition={{ duration: 0.3 }}
             />
 
@@ -87,12 +99,16 @@ export function CardColaborador({ id, foto, nome, funcao, time, descricao, onCli
 
           {/* Role and team info */}
           <div className='mb-4 pb-4 border-b border-[#1CBA89] border-opacity-20'>
-            <p className='text-sm font-semibold text-[#1CBA89] mb-1'>{funcao}</p>
+            <p className='text-sm font-semibold text-[#1CBA89] mb-1'>
+              {funcao}
+            </p>
             <p className='text-xs text-slate-500 dark:text-slate-400'>{time}</p>
           </div>
 
           {/* Description */}
-          <p className='text-sm text-slate-700 dark:text-slate-300 mb-6 flex-grow leading-relaxed'>{descricao}</p>
+          <p className='text-sm text-slate-700 dark:text-slate-300 mb-6 flex-grow leading-relaxed'>
+            {descricao}
+          </p>
 
           {/* Action button with gradient */}
           <motion.button
@@ -107,5 +123,5 @@ export function CardColaborador({ id, foto, nome, funcao, time, descricao, onCli
         </div>
       </div>
     </motion.div>
-  )
+  );
 }
