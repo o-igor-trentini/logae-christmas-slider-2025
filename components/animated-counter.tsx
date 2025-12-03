@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react'
 
 interface AnimatedCounterProps {
   value: number | string
@@ -8,14 +8,14 @@ interface AnimatedCounterProps {
   duration?: number
 }
 
-export function AnimatedCounter({ value: finalValue, className = "", duration = 2 }: AnimatedCounterProps) {
-  const [displayValue, setDisplayValue] = useState(0)
+export function AnimatedCounter({ value: finalValue, className = '', duration = 2 }: AnimatedCounterProps) {
+  const [displayValue, setDisplayValue] = useState<number | string>(0)
 
-  const numericValue = typeof finalValue === "string" ? Number.parseInt(finalValue, 10) : finalValue
+  const numericValue = typeof finalValue === 'string' ? Number.parseInt(finalValue, 10) : finalValue
 
   useEffect(() => {
     if (isNaN(numericValue)) {
-      setDisplayValue(finalValue as any)
+      setDisplayValue(finalValue)
       return
     }
 

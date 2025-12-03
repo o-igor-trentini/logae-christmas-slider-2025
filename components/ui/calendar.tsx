@@ -1,6 +1,7 @@
 'use client'
 
 import * as React from 'react'
+
 import {
   ChevronDownIcon,
   ChevronLeftIcon,
@@ -8,8 +9,8 @@ import {
 } from 'lucide-react'
 import { DayButton, DayPicker, getDefaultClassNames } from 'react-day-picker'
 
-import { cn } from '@/lib/utils'
 import { Button, buttonVariants } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
 
 function Calendar({
   className,
@@ -128,7 +129,7 @@ function Calendar({
         Root: ({ className, rootRef, ...props }) => {
           return (
             <div
-              data-slot="calendar"
+              data-slot='calendar'
               ref={rootRef}
               className={cn(className)}
               {...props}
@@ -159,7 +160,7 @@ function Calendar({
         WeekNumber: ({ children, ...props }) => {
           return (
             <td {...props}>
-              <div className="flex size-(--cell-size) items-center justify-center text-center">
+              <div className='flex size-(--cell-size) items-center justify-center text-center'>
                 {children}
               </div>
             </td>
@@ -188,8 +189,8 @@ function CalendarDayButton({
   return (
     <Button
       ref={ref}
-      variant="ghost"
-      size="icon"
+      variant='ghost'
+      size='icon'
       data-day={day.date.toLocaleDateString()}
       data-selected-single={
         modifiers.selected &&

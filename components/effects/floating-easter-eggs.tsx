@@ -1,9 +1,12 @@
-"use client"
+'use client'
 
-import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
-import { EASTER_EGGS } from "@/lib/constants/easter-eggs"
-import Image from "next/image"
+import { useState, useEffect } from 'react'
+
+import Image from 'next/image'
+
+import { motion } from 'framer-motion'
+
+import { EASTER_EGGS } from '@/lib/constants/easter-eggs'
 
 interface FloatingEasterEgg {
   id: string
@@ -64,7 +67,7 @@ export function FloatingEasterEggs() {
   }, [])
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden">
+    <div className='fixed inset-0 pointer-events-none z-10 overflow-hidden'>
       {eggs.map((egg) => (
         <motion.div
           key={egg.id}
@@ -83,27 +86,27 @@ export function FloatingEasterEggs() {
           }}
           transition={{
             duration: egg.duration,
-            ease: "easeInOut",
+            ease: 'easeInOut',
           }}
-          className="fixed pointer-events-none"
+          className='fixed pointer-events-none'
         >
-          {egg.type === "emoji" ? (
-            <div className="text-6xl drop-shadow-lg filter blur-0 hover:drop-shadow-xl transition-all">
+          {egg.type === 'emoji' ? (
+            <div className='text-6xl drop-shadow-lg filter blur-0 hover:drop-shadow-xl transition-all'>
               {egg.content}
             </div>
-          ) : egg.type === "image" ? (
-            <div className="relative w-24 h-24 drop-shadow-lg">
+          ) : egg.type === 'image' ? (
+            <div className='relative w-24 h-24 drop-shadow-lg'>
               <Image
-                src={egg.content || "/placeholder.svg"}
-                alt="Easter egg"
+                src={egg.content || '/placeholder.svg'}
+                alt='Easter egg'
                 fill
-                className="object-contain"
+                className='object-contain'
                 unoptimized
               />
             </div>
           ) : (
-            <div className="px-4 py-2 bg-gradient-to-r from-[#1CBA89]/40 to-[#064635]/40 rounded-full backdrop-blur-sm border border-[#1CBA89]/50 whitespace-nowrap">
-              <span className="text-white font-bold text-lg drop-shadow-lg">{egg.content}</span>
+            <div className='px-4 py-2 bg-gradient-to-r from-[#1CBA89]/40 to-[#064635]/40 rounded-full backdrop-blur-sm border border-[#1CBA89]/50 whitespace-nowrap'>
+              <span className='text-white font-bold text-lg drop-shadow-lg'>{egg.content}</span>
             </div>
           )}
         </motion.div>

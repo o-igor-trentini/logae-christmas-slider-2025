@@ -1,15 +1,16 @@
-"use client"
+'use client'
 
-import { useEffect, useState } from "react"
-import { motion } from "framer-motion"
-import { createPortal } from "react-dom"
+import { useEffect, useState } from 'react'
+
+import { motion } from 'framer-motion'
+import { createPortal } from 'react-dom'
 
 interface Particle {
   id: number
   x: number
   y: number
   life: number
-  type: "snowflake" | "gift" | "sparkle"
+  type: 'snowflake' | 'gift' | 'sparkle'
 }
 
 export function CursorTrail() {
@@ -23,7 +24,7 @@ export function CursorTrail() {
   useEffect(() => {
     let particleId = 0
     const particleArray: Particle[] = []
-    const types = ["snowflake", "gift", "sparkle"] as const
+    const types = ['snowflake', 'gift', 'sparkle'] as const
 
     const handleMouseMove = (e: MouseEvent) => {
       if (Math.random() < 0.4) {
@@ -48,8 +49,8 @@ export function CursorTrail() {
       )
     }
 
-    window.addEventListener("mousemove", handleMouseMove)
-    return () => window.removeEventListener("mousemove", handleMouseMove)
+    window.addEventListener('mousemove', handleMouseMove)
+    return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [])
 
   if (!mounted) return null
@@ -57,14 +58,14 @@ export function CursorTrail() {
   const ParticleElement = ({ particle }: { particle: Particle }) => {
     const getEmoji = () => {
       switch (particle.type) {
-        case "snowflake":
-          return "❄️"
-        case "gift":
-          return "🎁"
-        case "sparkle":
-          return "✨"
+        case 'snowflake':
+          return '❄️'
+        case 'gift':
+          return '🎁'
+        case 'sparkle':
+          return '✨'
         default:
-          return "❄️"
+          return '❄️'
       }
     }
 
@@ -73,11 +74,11 @@ export function CursorTrail() {
         initial={{ opacity: 1, scale: 1 }}
         animate={{ opacity: 0, scale: 0 }}
         transition={{ duration: 1 }}
-        className="pointer-events-none fixed text-2xl"
+        className='pointer-events-none fixed text-2xl'
         style={{
           left: particle.x,
           top: particle.y,
-          transform: "translate(-50%, -50%)",
+          transform: 'translate(-50%, -50%)',
         }}
       >
         {getEmoji()}

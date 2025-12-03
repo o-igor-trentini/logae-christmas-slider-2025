@@ -1,7 +1,8 @@
-"use client"
+'use client'
 
-import { motion } from "framer-motion"
-import { AnimatedCounter } from "@/components/animated-counter"
+import { motion } from 'framer-motion'
+
+import { AnimatedCounter } from '@/components/animated-counter'
 
 interface ContentRendererProps {
   content: string | number
@@ -10,17 +11,17 @@ interface ContentRendererProps {
   duration?: number
 }
 
-export function ContentRenderer({ content, className = "", prefix, duration = 2 }: ContentRendererProps) {
+export function ContentRenderer({ content, className = '', prefix, duration = 2 }: ContentRendererProps) {
   const contentStr = String(content)
 
   const isNumeric = /^\d+[\d.,]*$/.test(contentStr)
   const hasPrefix = prefix || /^[^\d]*/.exec(contentStr)?.[0]
-  const numericPart = contentStr.replace(/[^\d.,]/g, "")
-  const extractedPrefix = prefix || /^[^\d]*/.exec(contentStr)?.[0] || ""
+  const numericPart = contentStr.replace(/[^\d.,]/g, '')
+  const extractedPrefix = prefix || /^[^\d]*/.exec(contentStr)?.[0] || ''
 
   if (isNumeric || (hasPrefix && numericPart)) {
     // Renderiza número com animação de contador e prefixo
-    const numValue = numericPart.replace(/\D/g, "")
+    const numValue = numericPart.replace(/\D/g, '')
 
     return (
       <motion.div
@@ -29,8 +30,8 @@ export function ContentRenderer({ content, className = "", prefix, duration = 2 
         transition={{ duration: 0.5 }}
         className={className}
       >
-        <span className="text-white">{extractedPrefix}</span>
-        <AnimatedCounter value={numValue} className="text-white" duration={duration} />
+        <span className='text-white'>{extractedPrefix}</span>
+        <AnimatedCounter value={numValue} className='text-white' duration={duration} />
       </motion.div>
     )
   }
