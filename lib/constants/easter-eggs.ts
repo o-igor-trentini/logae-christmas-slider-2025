@@ -28,11 +28,19 @@ export const EASTER_EGGS = [
   { type: 'frase', content: 'null !== Natal' },
   { type: 'frase', content: 'if(Navidad) ...' },
 
-  { type: 'image', content: 'https://media.giphy.com/media/3o7TKU8LAASkEUkwFO/giphy.gif' },
-  { type: 'image', content: 'https://media.giphy.com/media/g9GznKK0ZX9bS/giphy.gif' },
-  { type: 'image', content: 'https://media.giphy.com/media/l3q2K5jinAlZ8V1i8/giphy.gif' },
-  { type: 'image', content: 'https://media.giphy.com/media/Rl6YzcCz9LeJ2QFGWT/giphy.gif' },
-  { type: 'image', content: 'https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif' },
-]
+  { type: 'image', content: '/easter-eggs/adailton-1.png' },
+  { type: 'image', content: '/easter-eggs/eraldo-1.png' },
+  { type: 'image', content: '/easter-eggs/igor-1.png' },
+  { type: 'image', content: '/easter-eggs/igor-2.png' },
+  { type: 'image', content: '/easter-eggs/igor-3.png' },
+  { type: 'image', content: '/easter-eggs/isaque-1.png' },
+  { type: 'image', content: '/easter-eggs/isaque-2.png' },
+  { type: 'image', content: '/easter-eggs/jeffe-1.png' },
+  { type: 'image', content: '/easter-eggs/magro-1.png' },
+  { type: 'image', content: '/easter-eggs/scheibe-1.png' },
+  { type: 'image', content: '/easter-eggs/scheibe-2.png' },
+  { type: 'image', content: '/easter-eggs/scheibe-3.png' },
+  { type: 'image', content: '/easter-eggs/vini-a-1.png' },
+];
 
-export type EasterEgg = (typeof EASTER_EGGS)[number]
+export type EasterEgg = (typeof EASTER_EGGS)[number];
