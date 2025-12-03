@@ -212,7 +212,7 @@ export const COLABORADORES: Colaborador[] = [
     foto: '/collaborators/welerson.jpeg',
     nome: 'Welerson Bugança',
     funcao: 'Desenvolvedor',
-    time: 'PEC',
+    time: 'eTorre',
     descricao: 'Integração contínua é seu fluxo natalino.',
     descricaoCompleta:
       'Welerson mantém pipeline de desenvolvimento fluindo suavemente como canção de Natal. Seus processos CI/CD são exemplares como coral afinado.',
