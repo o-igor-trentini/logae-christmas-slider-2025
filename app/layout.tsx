@@ -1,30 +1,39 @@
-import type React from "react"
-import { Geist, Geist_Mono } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
-import "./globals.css"
-import { SnowEffect } from "@/components/effects/snow-effect"
-import { ThemeProvider } from "@/components/theme-provider"
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import "./globals.css";
+import { SnowEffect } from "@/components/effects/snow-effect";
+import { ThemeProvider } from "@/components/theme-provider";
+import { ReactNode } from "react";
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const geistSans = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist-sans",
+});
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+});
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Logae - Time de Desenvolvimento",
   description: "Plataforma natalina mágica do time de desenvolvimento",
-  generator: "v0.app",
+  generator: "Igor Trentini",
   icons: {
     icon: "/icon.svg",
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: ReactNode;
 }>) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      <body className={`font-sans antialiased`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
+      >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <SnowEffect />
           {/* Header component removed */}
@@ -34,5 +43,5 @@ export default function RootLayout({
         <Analytics />
       </body>
     </html>
-  )
+  );
 }

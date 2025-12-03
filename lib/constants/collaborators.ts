@@ -2,7 +2,7 @@
 export const COLABORADORES = [
   {
     id: "1",
-    foto: "/developer-in-christmas-costume.jpg",
+    foto: "/team/developer-in-christmas-costume.jpg",
     nome: "João Silva",
     funcao: "Senior Developer",
     time: "PEC",
@@ -12,7 +12,7 @@ export const COLABORADORES = [
   },
   {
     id: "2",
-    foto: "/qa-tester-in-santa-hat.jpg",
+    foto: "/team/qa-tester-in-santa-hat.jpg",
     nome: "Maria Santos",
     funcao: "QA Lead",
     time: "ECentral",
@@ -22,7 +22,7 @@ export const COLABORADORES = [
   },
   {
     id: "3",
-    foto: "/frontend-developer-with-elf-hat.jpg",
+    foto: "/team/frontend-developer-with-elf-hat.jpg",
     nome: "Carlos Oliveira",
     funcao: "Frontend Developer",
     time: "Torre X",
@@ -32,7 +32,7 @@ export const COLABORADORES = [
   },
   {
     id: "4",
-    foto: "/backend-developer-christmas-tree.jpg",
+    foto: "/team/backend-developer-christmas-tree.jpg",
     nome: "Ana Costa",
     funcao: "Backend Developer",
     time: "PEC",
@@ -42,7 +42,7 @@ export const COLABORADORES = [
   },
   {
     id: "5",
-    foto: "/devops-engineer-reindeer-costume.jpg",
+    foto: "/team/devops-engineer-reindeer-costume.jpg",
     nome: "Lucas Fernandes",
     funcao: "DevOps Engineer",
     time: "ECentral",
@@ -52,7 +52,7 @@ export const COLABORADORES = [
   },
   {
     id: "6",
-    foto: "/product-owner-with-santa-costume.jpg",
+    foto: "/team/product-owner-with-santa-costume.jpg",
     nome: "Beatriz Rocha",
     funcao: "Product Owner",
     time: "Torre X",
