@@ -21,6 +21,7 @@ export const EASTER_EGGS = [
   { type: 'frase', content: 'prefere uma caganera ou o sistema funcionando?' },
 
   { type: 'image', content: '/easter-eggs/adailton-1.png' },
+  { type: 'image', content: '/easter-eggs/baller-1.png' },
   { type: 'image', content: '/easter-eggs/eraldo-1.gif' },
   { type: 'image', content: '/easter-eggs/igor-1.png' },
   { type: 'image', content: '/easter-eggs/igor-2.gif' },
@@ -28,11 +29,13 @@ export const EASTER_EGGS = [
   { type: 'image', content: '/easter-eggs/isaque-1.png' },
   { type: 'image', content: '/easter-eggs/isaque-2.png' },
   { type: 'image', content: '/easter-eggs/jeffe-1.gif' },
+  { type: 'image', content: '/easter-eggs/jeffe-2.png' },
   { type: 'image', content: '/easter-eggs/magro-1.png' },
   { type: 'image', content: '/easter-eggs/scheibe-1.png' },
   { type: 'image', content: '/easter-eggs/scheibe-2.png' },
   { type: 'image', content: '/easter-eggs/scheibe-3.png' },
   { type: 'image', content: '/easter-eggs/vini-a-1.png' },
+  { type: 'image', content: '/easter-eggs/ygor-1.png' },
 ];
 
 export type EasterEgg = (typeof EASTER_EGGS)[number];
