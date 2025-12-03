@@ -1,27 +1,36 @@
-'use client'
+'use client';
 
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
 
-import { AnimatedCounter } from '@/components/animated-counter'
+import { AnimatedCounter } from '@/components/animated-counter';
 
 interface ContentRendererProps {
-  content: string | number
-  className?: string
-  prefix?: string
-  duration?: number
+  content: string | number;
+  className?: string;
+  prefix?: string;
+  duration?: number;
 }
 
-export function ContentRenderer({ content, className = '', prefix, duration = 2 }: ContentRendererProps) {
-  const contentStr = String(content)
+export function ContentRenderer({
+  content,
+  className = '',
+  prefix,
+  duration = 2,
+}: ContentRendererProps) {
+  const contentStr = String(content);
 
-  const isNumeric = /^\d+[\d.,]*$/.test(contentStr)
-  const hasPrefix = prefix || /^[^\d]*/.exec(contentStr)?.[0]
-  const numericPart = contentStr.replace(/[^\d.,]/g, '')
-  const extractedPrefix = prefix || /^[^\d]*/.exec(contentStr)?.[0] || ''
+  const isNumeric = /^\d+[\d.,]*$/.test(contentStr);
+  const hasPrefix = prefix || /^[^\d]*/.exec(contentStr)?.[0];
+  const numericPart = contentStr.replace(/[^\d.,]/g, '');
+  const extractedPrefix = prefix || /^[^\d]*/.exec(contentStr)?.[0] || '';
 
-  if (isNumeric || (hasPrefix && numericPart)) {
-    // Renderiza número com animação de contador e prefixo
-    const numValue = numericPart.replace(/\D/g, '')
+  // Extrai sufixo (texto após os números)
+  const suffixMatch = /[\d.,]+([^\d.,]+)$/.exec(contentStr);
+  const extractedSuffix = suffixMatch?.[1] || '';
+
+  if (isNumeric || (hasPrefix && numericPart) || extractedSuffix) {
+    // Renderiza número com animação de contador, prefixo e sufixo
+    const numValue = numericPart.replace(/\D/g, '');
 
     return (
       <motion.div
@@ -30,10 +39,19 @@ export function ContentRenderer({ content, className = '', prefix, duration = 2 
         transition={{ duration: 0.5 }}
         className={className}
       >
-        <span className='text-white'>{extractedPrefix}</span>
-        <AnimatedCounter value={numValue} className='text-white' duration={duration} />
+        {extractedPrefix && (
+          <span className={className}>{extractedPrefix}</span>
+        )}
+        <AnimatedCounter
+          value={numValue}
+          className={className}
+          duration={duration}
+        />
+        {extractedSuffix && (
+          <span className={className}>{extractedSuffix}</span>
+        )}
       </motion.div>
-    )
+    );
   }
 
   // Renderiza texto com animação discreta
@@ -46,5 +64,5 @@ export function ContentRenderer({ content, className = '', prefix, duration = 2 
     >
       {contentStr}
     </motion.div>
-  )
+  );
 }
