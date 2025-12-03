@@ -1,5 +1,16 @@
+// Tipo para colaborador
+export interface Colaborador {
+  id: string
+  foto: string
+  nome: string
+  funcao: string
+  time: string
+  descricao: string
+  descricaoCompleta: string
+}
+
 // Constante com todos os colaboradores fixos
-export const COLABORADORES = [
+export const COLABORADORES: Colaborador[] = [
   {
     id: "1",
     foto: "/team/developer-in-christmas-costume.jpg",

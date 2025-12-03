@@ -1,27 +1,50 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { EasterEggHandler } from "@/components/effects/easter-egg-handler"
-import { ContentRenderer } from "@/components/content-renderer"
-import { FloatingEasterEggs } from "@/components/effects/floating-easter-eggs"
-import { COLABORADORES } from "@/lib/constants/collaborators"
-import { STATISTICS_SLIDES } from "@/lib/constants/statistics"
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { EasterEggHandler } from "@/components/effects/easter-egg-handler";
+import { ContentRenderer } from "@/components/content-renderer";
+import { FloatingEasterEggs } from "@/components/effects/floating-easter-eggs";
+import { COLABORADORES, type Colaborador } from "@/lib/constants/collaborators";
+import {
+  STATISTICS_SLIDES,
+  type StatisticSlide,
+} from "@/lib/constants/statistics";
 
-const ALL_SLIDES = [
+// Tipos para os slides
+interface FirefightersData {
+  title: string;
+  emoji: string;
+  mainStat: string;
+  mainStatLabel: string;
+  description: string;
+  benefits: string[];
+}
+
+type SlideType =
+  | { type: "colaborador"; data: Colaborador }
+  | { type: "statistic"; data: StatisticSlide }
+  | { type: "firefighters"; data: FirefightersData };
+
+const ALL_SLIDES: SlideType[] = [
   ...COLABORADORES.flatMap((colab, index) => {
-    const slides: any[] = [{ type: "colaborador", data: colab }]
+    const slides: SlideType[] = [{ type: "colaborador", data: colab }];
     if ((index + 1) % 2 === 0) {
-      slides.push({ type: "statistic", data: STATISTICS_SLIDES[Math.floor(index / 2)] })
+      slides.push({
+        type: "statistic",
+        data: STATISTICS_SLIDES[Math.floor(index / 2)],
+      });
     }
-    return slides
+    return slides;
   }),
-  ...STATISTICS_SLIDES.slice(Math.ceil(COLABORADORES.length / 2)).map((stat) => ({
-    type: "statistic",
-    data: stat,
-  })),
+  ...STATISTICS_SLIDES.slice(Math.ceil(COLABORADORES.length / 2)).map(
+    (stat) => ({
+      type: "statistic" as const,
+      data: stat,
+    })
+  ),
   {
-    type: "firefighters",
+    type: "firefighters" as const,
     data: {
       title: "Bombeiros Especializados",
       emoji: "🚒",
@@ -37,48 +60,50 @@ const ALL_SLIDES = [
       ],
     },
   },
-]
+];
 
 export default function Home() {
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const [isAutoPlay, setIsAutoPlay] = useState(true)
-  const [direction, setDirection] = useState(0)
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isAutoPlay, setIsAutoPlay] = useState(true);
+  const [direction, setDirection] = useState(0);
 
   useEffect(() => {
-    if (!isAutoPlay) return
+    if (!isAutoPlay) return;
 
     const timer = setInterval(() => {
-      setDirection(1)
-      setCurrentSlide((prev) => (prev + 1) % ALL_SLIDES.length)
-    }, 8000)
+      setDirection(1);
+      setCurrentSlide((prev) => (prev + 1) % ALL_SLIDES.length);
+    }, 8000);
 
-    return () => clearInterval(timer)
-  }, [isAutoPlay])
+    return () => clearInterval(timer);
+  }, [isAutoPlay]);
 
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
       if (e.key === "ArrowLeft") {
-        setDirection(-1)
-        setCurrentSlide((prev) => (prev - 1 + ALL_SLIDES.length) % ALL_SLIDES.length)
-        setIsAutoPlay(false)
+        setDirection(-1);
+        setCurrentSlide(
+          (prev) => (prev - 1 + ALL_SLIDES.length) % ALL_SLIDES.length
+        );
+        setIsAutoPlay(false);
       } else if (e.key === "ArrowRight") {
-        setDirection(1)
-        setCurrentSlide((prev) => (prev + 1) % ALL_SLIDES.length)
-        setIsAutoPlay(false)
+        setDirection(1);
+        setCurrentSlide((prev) => (prev + 1) % ALL_SLIDES.length);
+        setIsAutoPlay(false);
       } else if (e.key === " ") {
-        e.preventDefault()
-        setIsAutoPlay(!isAutoPlay)
+        e.preventDefault();
+        setIsAutoPlay(!isAutoPlay);
       } else if (e.key === "Escape") {
-        e.preventDefault()
-        setIsAutoPlay(false)
+        e.preventDefault();
+        setIsAutoPlay(false);
       }
-    }
+    };
 
-    window.addEventListener("keydown", handleKeyPress)
-    return () => window.removeEventListener("keydown", handleKeyPress)
-  }, [isAutoPlay])
+    window.addEventListener("keydown", handleKeyPress);
+    return () => window.removeEventListener("keydown", handleKeyPress);
+  }, [isAutoPlay]);
 
-  const slide = ALL_SLIDES[currentSlide]
+  const slide = ALL_SLIDES[currentSlide];
 
   const slideVariants = {
     enter: (dir: number) => ({
@@ -95,7 +120,7 @@ export default function Home() {
       x: dir < 0 ? 1000 : -1000,
       opacity: 0,
     }),
-  }
+  };
 
   return (
     <>
@@ -191,7 +216,9 @@ export default function Home() {
                       className="inline-block mb-4"
                     >
                       <div className="px-4 py-1.5 rounded-full bg-gradient-to-r from-[#064635] to-[#1CBA89] bg-opacity-20 border border-[#1CBA89] border-opacity-50">
-                        <span className="text-sm font-bold text-white">{slide.data.time}</span>
+                        <span className="text-sm font-bold text-white">
+                          {slide.data.time}
+                        </span>
                       </div>
                     </motion.div>
 
@@ -246,7 +273,11 @@ export default function Home() {
                     {/* Decoration element */}
                     <motion.div
                       animate={{ rotate: 360 }}
-                      transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+                      transition={{
+                        duration: 20,
+                        repeat: Number.POSITIVE_INFINITY,
+                        ease: "linear",
+                      }}
                       className="text-4xl"
                     >
                       🎄
@@ -273,7 +304,11 @@ export default function Home() {
                     >
                       <motion.span
                         animate={{ y: [0, -4, 0] }}
-                        transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
+                        transition={{
+                          duration: 3,
+                          repeat: Number.POSITIVE_INFINITY,
+                          ease: "easeInOut",
+                        }}
                         className="inline-block mr-4"
                       >
                         {slide.data.emoji}
@@ -342,7 +377,10 @@ export default function Home() {
                     >
                       <motion.span
                         animate={{ rotate: [0, 10, -10, 0], y: [0, -10, 0] }}
-                        transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY }}
+                        transition={{
+                          duration: 4,
+                          repeat: Number.POSITIVE_INFINITY,
+                        }}
                       >
                         {slide.data.emoji}
                       </motion.span>
@@ -365,8 +403,12 @@ export default function Home() {
                       transition={{ delay: 0.4, duration: 0.5 }}
                       className="mb-8"
                     >
-                      <div className="text-7xl font-black text-red-500 mb-2">{slide.data.mainStat}</div>
-                      <div className="text-2xl font-bold text-orange-400">{slide.data.mainStatLabel}</div>
+                      <div className="text-7xl font-black text-red-500 mb-2">
+                        {slide.data.mainStat}
+                      </div>
+                      <div className="text-2xl font-bold text-orange-400">
+                        {slide.data.mainStatLabel}
+                      </div>
                     </motion.div>
 
                     {/* Decorative line */}
@@ -394,17 +436,27 @@ export default function Home() {
                       transition={{ delay: 0.6, duration: 0.5 }}
                       className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full"
                     >
-                      {slide.data.benefits.map((benefit: string, idx: number) => (
-                        <motion.div
-                          key={idx}
-                          initial={{ opacity: 0, x: idx % 2 === 0 ? -20 : 20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: 0.65 + idx * 0.1, duration: 0.5 }}
-                          className="p-3 rounded-xl bg-gradient-to-r from-red-900/30 to-orange-900/30 border border-red-500/30 hover:border-red-500/60 transition-colors"
-                        >
-                          <p className="text-base font-semibold text-orange-300">{benefit}</p>
-                        </motion.div>
-                      ))}
+                      {slide.data.benefits.map(
+                        (benefit: string, idx: number) => (
+                          <motion.div
+                            key={idx}
+                            initial={{
+                              opacity: 0,
+                              x: idx % 2 === 0 ? -20 : 20,
+                            }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{
+                              delay: 0.65 + idx * 0.1,
+                              duration: 0.5,
+                            }}
+                            className="p-3 rounded-xl bg-gradient-to-r from-red-900/30 to-orange-900/30 border border-red-500/30 hover:border-red-500/60 transition-colors"
+                          >
+                            <p className="text-base font-semibold text-orange-300">
+                              {benefit}
+                            </p>
+                          </motion.div>
+                        )
+                      )}
                     </motion.div>
                   </div>
                 </div>
@@ -433,9 +485,9 @@ export default function Home() {
               whileHover={{ scale: 1.3 }}
               whileTap={{ scale: 0.9 }}
               onClick={() => {
-                setDirection(index > currentSlide ? 1 : -1)
-                setCurrentSlide(index)
-                setIsAutoPlay(false)
+                setDirection(index > currentSlide ? 1 : -1);
+                setCurrentSlide(index);
+                setIsAutoPlay(false);
               }}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
                 index === currentSlide
@@ -455,10 +507,33 @@ export default function Home() {
         )}
 
         {/* Controls info */}
-        <div className="absolute top-6 left-6 text-white/40 text-sm z-20">
-          <p>← → Navegar | ESC Pausar</p>
+        <div className="absolute top-6 left-6 text-white/60 text-sm z-20 bg-black/30 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/10">
+          <p className="font-semibold mb-2 text-white/80">⌨️ Controles:</p>
+          <div className="space-y-1">
+            <p className="flex items-center gap-2">
+              <span className="px-2 py-0.5 rounded bg-white/10 font-mono text-xs">
+                ←
+              </span>
+              <span className="px-2 py-0.5 rounded bg-white/10 font-mono text-xs">
+                →
+              </span>
+              <span>Navegar</span>
+            </p>
+            <p className="flex items-center gap-2">
+              <span className="px-2 py-0.5 rounded bg-white/10 font-mono text-xs">
+                ESPAÇO
+              </span>
+              <span>Pausar/Retomar</span>
+            </p>
+            <p className="flex items-center gap-2">
+              <span className="px-2 py-0.5 rounded bg-white/10 font-mono text-xs">
+                ESC
+              </span>
+              <span>Pausar</span>
+            </p>
+          </div>
         </div>
       </div>
     </>
-  )
+  );
 }

@@ -1,4 +1,17 @@
-export const STATISTICS_SLIDES = [
+// Tipo para slide de estatística
+export interface StatisticSlide {
+  id: string
+  title: string
+  value: string
+  unit: string
+  description: string
+  emoji: string
+  color: string
+  bgGradient: string
+  fullDescription?: string
+}
+
+export const STATISTICS_SLIDES: StatisticSlide[] = [
   {
     id: "stat-1",
     title: "Café Consumido",
