@@ -1,0 +1,11 @@
+# IDE
+.vscode
+.idea
+
+# Node
+node_modules
+dist
+build
+
+# Variável de ambiente
+.env
