@@ -93,9 +93,6 @@ export default function Home() {
       } else if (e.key === ' ') {
         e.preventDefault();
         setIsAutoPlay(!isAutoPlay);
-      } else if (e.key === 'Escape') {
-        e.preventDefault();
-        setIsAutoPlay(false);
       }
     };
 

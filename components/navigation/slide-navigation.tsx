@@ -17,21 +17,59 @@ export function SlideNavigation({
 }: SlideNavigationProps) {
   return (
     <>
-      {/* Navigation dots at bottom */}
-      <div className='absolute bottom-12 left-1/2 transform -translate-x-1/2 flex gap-3 z-20 flex-wrap justify-center max-w-2xl'>
-        {Array.from({ length: totalSlides }).map((_, index) => (
+      {/* Navigation counter at bottom */}
+      <div className='absolute bottom-12 left-1/2 transform -translate-x-1/2 z-20'>
+        <div className='flex items-center gap-4 bg-black/30 backdrop-blur-sm rounded-full px-6 py-3'>
           <motion.button
-            key={index}
-            whileHover={{ scale: 1.3 }}
+            whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            onClick={() => onSlideChange(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentSlide
-                ? 'bg-linear-to-r from-[#1CBA89] to-[#064635] w-6'
-                : 'bg-white/30 hover:bg-white/50'
-            }`}
-          />
-        ))}
+            onClick={() => onSlideChange((currentSlide - 1 + totalSlides) % totalSlides)}
+            className='text-white/80 hover:text-white transition-colors'
+            aria-label='Slide anterior'
+          >
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              width='20'
+              height='20'
+              viewBox='0 0 24 24'
+              fill='none'
+              stroke='currentColor'
+              strokeWidth='2'
+              strokeLinecap='round'
+              strokeLinejoin='round'
+            >
+              <polyline points='15 18 9 12 15 6'></polyline>
+            </svg>
+          </motion.button>
+
+          <div className='text-white font-medium text-sm min-w-20 text-center'>
+            <span className='text-lg font-bold'>{currentSlide + 1}</span>
+            <span className='text-white/60 mx-1'>/</span>
+            <span className='text-white/60'>{totalSlides}</span>
+          </div>
+
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => onSlideChange((currentSlide + 1) % totalSlides)}
+            className='text-white/80 hover:text-white transition-colors'
+            aria-label='Próximo slide'
+          >
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              width='20'
+              height='20'
+              viewBox='0 0 24 24'
+              fill='none'
+              stroke='currentColor'
+              strokeWidth='2'
+              strokeLinecap='round'
+              strokeLinejoin='round'
+            >
+              <polyline points='9 18 15 12 9 6'></polyline>
+            </svg>
+          </motion.button>
+        </div>
       </div>
 
       {/* Auto-play indicator */}

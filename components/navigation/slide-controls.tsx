@@ -20,12 +20,6 @@ export function SlideControls() {
           </span>
           <span>Pausar/Retomar</span>
         </p>
-        <p className='flex items-center gap-2'>
-          <span className='px-2 py-0.5 rounded bg-white/10 font-mono text-xs'>
-            ESC
-          </span>
-          <span>Pausar</span>
-        </p>
       </div>
     </div>
   );
