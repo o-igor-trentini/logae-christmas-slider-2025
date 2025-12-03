@@ -95,7 +95,7 @@ export function FloatingEasterEggs() {
               {egg.content}
             </div>
           ) : egg.type === 'image' ? (
-            <div className='relative w-24 h-24 drop-shadow-lg'>
+            <div className='relative w-40 h-40 drop-shadow-lg'>
               <Image
                 src={egg.content || '/placeholder.svg'}
                 alt='Easter egg'
