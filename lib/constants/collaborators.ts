@@ -1,5 +1,5 @@
 // Tipo para colaborador
-export interface Colaborador {
+export interface Collaborator {
   foto: string
   nome: string
   funcao: string
@@ -9,7 +9,7 @@ export interface Colaborador {
 }
 
 // Constante com todos os colaboradores fixos
-export const COLABORADORES: Colaborador[] = [
+export const COLLABORATORS: Collaborator[] = [
   {
     foto: '/collaborators/isaque.jpeg',
     nome: 'Isaque Klassmann',

@@ -14,7 +14,7 @@ import {
   type FirefightersData,
 } from '@/components/slides/firefighters-slide';
 import { StatisticSlideComponent } from '@/components/slides/statistic-slide';
-import { COLABORADORES, type Colaborador } from '@/lib/constants/collaborators';
+import { COLLABORATORS, type Collaborator } from '@/lib/constants/collaborators';
 import {
   STATISTICS_SLIDES,
   type StatisticSlide,
@@ -22,12 +22,12 @@ import {
 
 // Tipos para os slides
 type SlideType =
-  | { type: 'colaborador'; data: Colaborador }
+  | { type: 'colaborador'; data: Collaborator }
   | { type: 'statistic'; data: StatisticSlide }
   | { type: 'firefighters'; data: FirefightersData };
 
 const ALL_SLIDES: SlideType[] = [
-  ...COLABORADORES.flatMap((colab, index) => {
+  ...COLLABORATORS.flatMap((colab, index) => {
     const slides: SlideType[] = [{ type: 'colaborador', data: colab }];
     if ((index + 1) % 2 === 0) {
       slides.push({
@@ -37,7 +37,7 @@ const ALL_SLIDES: SlideType[] = [
     }
     return slides;
   }),
-  ...STATISTICS_SLIDES.slice(Math.ceil(COLABORADORES.length / 2)).map(
+  ...STATISTICS_SLIDES.slice(Math.ceil(COLLABORATORS.length / 2)).map(
     (stat) => ({
       type: 'statistic' as const,
       data: stat,

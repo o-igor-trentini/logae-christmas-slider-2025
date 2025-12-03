@@ -2,10 +2,10 @@
 
 import { motion } from 'framer-motion';
 
-import type { Colaborador } from '@/lib/constants/collaborators';
+import type { Collaborator } from '@/lib/constants/collaborators';
 
 interface ColaboradorSlideProps {
-  data: Colaborador;
+  data: Collaborator;
 }
 
 export function ColaboradorSlide({ data }: ColaboradorSlideProps) {
