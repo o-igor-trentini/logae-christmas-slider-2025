@@ -117,7 +117,7 @@ export function generateSlides(
     slides.push({
       type: 'firefighters',
       data: {
-        title: 'Bombeiros Especializados',
+        title: 'Bombeiros especializados',
         emoji: '🚒',
         mainStat: '0',
         mainStatLabel: 'incêndios na produção',
