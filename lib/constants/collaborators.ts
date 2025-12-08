@@ -11,7 +11,7 @@ export interface Collaborator {
 // Arquitetos
 const architects: Collaborator[] = [
   {
-    photo: './collaborators/isaque.jpeg',
+    photo: '/collaborators/isaque.jpeg',
     name: 'Isaque Klassmann',
     role: 'Arquiteto',
     team: 'Arquitetura/DevOps',
@@ -20,7 +20,7 @@ const architects: Collaborator[] = [
       'Isaque garante qualidade em cada entrega como se estivesse embrulhando presentes premium. Seus testes são tão rigorosos quanto a lista do Papai Noel.',
   },
   {
-    photo: './collaborators/jefferson.jpeg',
+    photo: '/collaborators/jefferson.jpeg',
     name: 'Jefferson Valcarenki',
     role: 'Arquiteto',
     team: 'Arquitetura/DevOps',
@@ -29,7 +29,7 @@ const architects: Collaborator[] = [
       'Jefferson constrói fundações tão robustas que suportariam até o peso de todos os presentes do mundo. Sua expertise em backend é lendária.',
   },
   {
-    photo: './collaborators/geferson.jpeg',
+    photo: '/collaborators/geferson.jpeg',
     name: 'Geferson Ludvig',
     role: 'Arquiteto',
     team: 'Arquitetura/DevOps',
@@ -42,7 +42,7 @@ const architects: Collaborator[] = [
 // BI
 const biAnalysts: Collaborator[] = [
   {
-    photo: './collaborators/cris.jpeg',
+    photo: '/collaborators/cris.jpeg',
     name: 'Cris',
     role: 'BI',
     team: 'BI',
@@ -51,7 +51,7 @@ const biAnalysts: Collaborator[] = [
       'Cris mantém os padrões de qualidade tão altos quanto a estrela no topo da árvore. Seu comprometimento com excelência inspira toda a equipe.',
   },
   {
-    photo: './collaborators/douglas.jpeg',
+    photo: '/collaborators/douglas.jpeg',
     name: 'Douglas',
     role: 'BI',
     team: 'BI',
@@ -60,7 +60,7 @@ const biAnalysts: Collaborator[] = [
       'Douglas constrói fundações tão robustas que suportariam até o peso de todos os presentes do mundo. Sua expertise em arquitetura é presente que nunca para de dar.',
   },
   {
-    photo: './collaborators/wesley.jpeg',
+    photo: '/collaborators/wesley.jpeg',
     name: 'Wesley',
     role: 'BI',
     team: 'BI',
@@ -73,7 +73,7 @@ const biAnalysts: Collaborator[] = [
 // Desenvolvedores
 const developers: Collaborator[] = [
   {
-    photo: './collaborators/eduardo-maltauro.jpeg',
+    photo: '/collaborators/eduardo-maltauro.jpeg',
     name: 'Eduardo Maltauro',
     role: 'Desenvolvedor',
     team: 'Siga Verd-e',
@@ -82,7 +82,7 @@ const developers: Collaborator[] = [
       'Eduardo otimiza aplicações com a mesma precisão que o Papai Noel calcula suas rotas. Cada milissegundo economizado é como um presente extra debaixo da árvore.',
   },
   {
-    photo: './collaborators/eduardo-pilonetto.jpeg',
+    photo: '/collaborators/eduardo-pilonetto.jpeg',
     name: 'Eduardo Pilonetto',
     role: 'Desenvolvedor',
     team: 'eCentral',
@@ -91,7 +91,7 @@ const developers: Collaborator[] = [
       'Com paciência de elfo experiente, Eduardo rastreia bugs como se estivesse seguindo pegadas na neve. Nenhum erro escapa de sua análise detalhada.',
   },
   {
-    photo: './collaborators/eraldo.jpeg',
+    photo: '/collaborators/eraldo.jpeg',
     name: 'Eraldo',
     role: 'Desenvolvedor',
     team: 'eTorre',
@@ -100,7 +100,7 @@ const developers: Collaborator[] = [
       'Eraldo explora novas tecnologias com curiosidade de criança na manhã de Natal. Cada projeto é uma oportunidade de aprender e ensinar algo novo.',
   },
   {
-    photo: './collaborators/gabriel.jpeg',
+    photo: '/collaborators/gabriel.jpeg',
     name: 'Gabriel Stringhini',
     role: 'Desenvolvedor',
     team: '???',
@@ -109,7 +109,7 @@ const developers: Collaborator[] = [
       'Gabriel domina todas as camadas da aplicação como o Papai Noel conhece todas as chaminés do mundo. Seu conhecimento abrangente é presente que nunca para de dar.',
   },
   {
-    photo: './collaborators/guilherme.jpeg',
+    photo: '/collaborators/guilherme.jpeg',
     name: 'Guilherme Borges',
     role: 'Desenvolvedor',
     team: 'eCentral',
@@ -118,7 +118,7 @@ const developers: Collaborator[] = [
       'Guilherme traz ideias frescas e inovadoras para cada projeto, como flocos de neve únicos. Sua criatividade transforma desafios em oportunidades mágicas.',
   },
   {
-    photo: './collaborators/hiuri.jpeg',
+    photo: '/collaborators/hiuri.jpeg',
     name: 'Hiuri Xavier',
     role: 'Desenvolvedor',
     team: 'eCentral',
@@ -127,7 +127,7 @@ const developers: Collaborator[] = [
       'Hiuri se move pelo código com a agilidade de um elfo experiente. Sua velocidade de entrega faz até as renas do Papai Noel parecerem lentas.',
   },
   {
-    photo: './collaborators/jucian.jpeg',
+    photo: '/collaborators/jucian.jpeg',
     name: 'Jucian Decazena',
     role: 'Desenvolvedor',
     team: 'ePonto',
@@ -136,7 +136,7 @@ const developers: Collaborator[] = [
       'Jucian enfrenta desafios técnicos com a determinação de quem escala chaminés estreitas. Sua capacidade analítica ilumina soluções como velas de Natal.',
   },
   {
-    photo: './collaborators/lucas.jpeg',
+    photo: '/collaborators/lucas.jpeg',
     name: 'Lucas',
     role: 'Desenvolvedor',
     team: 'ePonto',
@@ -145,7 +145,7 @@ const developers: Collaborator[] = [
       'Lucas escreve código tão puro e organizado quanto paisagem nevada intocada. Sua atenção aos detalhes garante entregas impecáveis.',
   },
   {
-    photo: './collaborators/mateus-s.jpeg',
+    photo: '/collaborators/mateus-s.jpeg',
     name: 'Mateus Schverz',
     role: 'Desenvolvedor',
     team: 'ePonto',
@@ -154,7 +154,7 @@ const developers: Collaborator[] = [
       'Mateus Schverz transforma aplicações lentas em foguetes supersônicos. Sua paixão por performance faz cada usuário sentir a magia da velocidade.',
   },
   {
-    photo: './collaborators/murilo.jpeg',
+    photo: '/collaborators/murilo.jpeg',
     name: 'Murilo Casagrande',
     role: 'Desenvolvedor',
     team: 'eTorre',
@@ -163,7 +163,7 @@ const developers: Collaborator[] = [
       'Murilo domina todo o ecossistema de desenvolvimento como chef prepara banquete natalino. Sua versatilidade é ingrediente secreto de projetos bem-sucedidos.',
   },
   {
-    photo: './collaborators/rhuan.jpeg',
+    photo: '/collaborators/rhuan.jpeg',
     name: 'Rhuan Klassmann',
     role: 'Desenvolvedor',
     team: 'eTorre',
@@ -172,7 +172,7 @@ const developers: Collaborator[] = [
       'Rhuan encontra e corrige bugs com precisão cirúrgica. Sua habilidade de rastreamento faz dele o Sherlock Holmes do código natalino.',
   },
   {
-    photo: './collaborators/vini-abreu.jpeg',
+    photo: '/collaborators/vini-abreu.jpeg',
     name: 'Vinícius Abreu',
     role: 'Desenvolvedor',
     team: 'ePonto',
@@ -181,7 +181,7 @@ const developers: Collaborator[] = [
       'Vinícius Abreu revisa código com atenção aos mínimos detalhes. Seus feedbacks construtivos elevam qualidade de todo o time como coro natalino.',
   },
   {
-    photo: './collaborators/vini-hartmann.jpeg',
+    photo: '/collaborators/vini-hartmann.jpeg',
     name: 'Vinícius Hartmann',
     role: 'Desenvolvedor',
     team: 'eTorre',
@@ -190,7 +190,7 @@ const developers: Collaborator[] = [
       'Vinícius Hartmann automatiza processos com eficiência de fábrica de brinquedos moderna. Cada script criado libera tempo para mais inovação.',
   },
   {
-    photo: './collaborators/welerson.jpeg',
+    photo: '/collaborators/welerson.jpeg',
     name: 'Welerson Bugança',
     role: 'Desenvolvedor',
     team: 'eTorre',
@@ -199,7 +199,7 @@ const developers: Collaborator[] = [
       'Welerson mantém pipeline de desenvolvimento fluindo suavemente como canção de Natal. Seus processos CI/CD são exemplares como coral afinado.',
   },
   {
-    photo: './collaborators/tarcisio.jpeg',
+    photo: '/collaborators/tarcisio.jpeg',
     name: 'Tarcísio',
     role: 'Desenvolvedor',
     team: 'PEC',
@@ -208,7 +208,7 @@ const developers: Collaborator[] = [
       'Tarcísio desenvolve soluções com precisão e eficiência. Sua dedicação ao código limpo e funcional é como presente bem embrulhado que todos adoram receber.',
   },
   {
-    photo: './collaborators/igor.jpeg',
+    photo: '/collaborators/igor.jpeg',
     name: 'Igor Trentini',
     role: 'Desenvolvedor',
     team: 'PEC',
@@ -217,7 +217,7 @@ const developers: Collaborator[] = [
       'Igor guia a equipe com a sabedoria de quem conhece cada detalhe da oficina. Sua liderança técnica transforma desafios em conquistas memoráveis.',
   },
   {
-    photo: './collaborators/ia-dieison.jpeg',
+    photo: '/collaborators/ia-dieison.jpeg',
     name: 'IA Dieison',
     role: 'Desenvolvedor',
     team: 'IA',
@@ -226,7 +226,7 @@ const developers: Collaborator[] = [
       'IA Dieison processa dados com a eficiência de uma fábrica de brinquedos automatizada. Seu aprendizado contínuo é como a magia do Natal que nunca acaba.',
   },
   {
-    photo: './collaborators/ia-nathan.jpeg',
+    photo: '/collaborators/ia-nathan.jpeg',
     name: 'IA Nathan',
     role: 'Desenvolvedor',
     team: 'IA',
@@ -235,7 +235,7 @@ const developers: Collaborator[] = [
       'IA Nathan analisa padrões com precisão cirúrgica, como se estivesse organizando presentes por categoria. Sua capacidade de predição impressiona até os elfos mais experientes.',
   },
   {
-    photo: './collaborators/ia-vinicius.jpeg',
+    photo: '/collaborators/ia-vinicius.jpeg',
     name: 'IA Vinícius',
     role: 'Desenvolvedor',
     team: 'IA',
@@ -248,7 +248,7 @@ const developers: Collaborator[] = [
 // DevOps
 const devOps: Collaborator[] = [
   {
-    photo: './collaborators/mateus-m.jpeg',
+    photo: '/collaborators/mateus-m.jpeg',
     name: 'Mateus Magro',
     role: 'DevOps',
     team: 'Arquitetura/DevOps',
@@ -261,7 +261,7 @@ const devOps: Collaborator[] = [
 // Gerentes
 const managers: Collaborator[] = [
   {
-    photo: './collaborators/cleimar.jpeg',
+    photo: '/collaborators/cleimar.jpeg',
     name: 'Cleimar Casagrande',
     role: 'Gerente',
     team: 'Gerente',
@@ -274,7 +274,7 @@ const managers: Collaborator[] = [
 // PO
 const productOwners: Collaborator[] = [
   {
-    photo: './collaborators/ariele.jpeg',
+    photo: '/collaborators/ariele.jpeg',
     name: 'Ariele Fernandes',
     role: 'PO',
     team: 'PEC',
@@ -283,7 +283,7 @@ const productOwners: Collaborator[] = [
       'Com um olhar atento aos detalhes, Ariele garante que cada linha de código seja um presente bem embrulhado. Sua organização deixaria até os elfos do Papai Noel com inveja.',
   },
   {
-    photo: './collaborators/bruna.jpeg',
+    photo: '/collaborators/bruna.jpeg',
     name: 'Bruna',
     role: 'PO',
     team: 'Siga Verd-e',
@@ -292,7 +292,7 @@ const productOwners: Collaborator[] = [
       'Bruna cria experiências de usuário tão mágicas quanto a manhã de Natal. Cada interface projetada por ela é um presente de usabilidade perfeita.',
   },
   {
-    photo: './collaborators/eleno.jpeg',
+    photo: '/collaborators/eleno.jpeg',
     name: 'Eleno',
     role: 'PO',
     team: 'eCentral',
@@ -301,7 +301,7 @@ const productOwners: Collaborator[] = [
       'Eleno escreve código com a elegância de uma valsa de Natal. Suas soluções são tão bem elaboradas que parecem envolvidas em papel de presente dourado.',
   },
   {
-    photo: './collaborators/luan.jpeg',
+    photo: '/collaborators/luan.jpeg',
     name: 'Luan',
     role: 'PO',
     team: 'eTorre',
@@ -310,7 +310,7 @@ const productOwners: Collaborator[] = [
       'Luan explora novas fronteiras tecnológicas com entusiasmo contagiante. Cada descoberta é compartilhada como presente precioso com a equipe.',
   },
   {
-    photo: './collaborators/ygor.jpeg',
+    photo: '/collaborators/ygor.jpeg',
     name: 'Ygor',
     role: 'PO',
     team: 'ePonto',
@@ -323,7 +323,7 @@ const productOwners: Collaborator[] = [
 // QA
 const qaAnalysts: Collaborator[] = [
   {
-    photo: './collaborators/adailton.jpeg',
+    photo: '/collaborators/adailton.jpeg',
     name: 'Adailton Teixeira',
     role: 'QA',
     team: 'QA',
@@ -332,7 +332,7 @@ const qaAnalysts: Collaborator[] = [
       'Especialista em resolver bugs complexos enquanto toma seu terceiro café do dia. Sua dedicação é tão grande que até os renos do Papai Noel param para aplaudir.',
   },
   {
-    photo: './collaborators/joana.jpeg',
+    photo: '/collaborators/joana.jpeg',
     name: 'Joana Franciscon',
     role: 'QA',
     team: 'QA',
@@ -341,7 +341,7 @@ const qaAnalysts: Collaborator[] = [
       'Joana cria interfaces tão intuitivas e bonitas quanto decorações natalinas premium. Cada pixel é posicionado com cuidado de quem arruma presentes sob a árvore.',
   },
   {
-    photo: './collaborators/karine.jpeg',
+    photo: '/collaborators/karine.jpeg',
     name: 'Karine Campos',
     role: 'QA',
     team: 'QA',
@@ -350,7 +350,7 @@ const qaAnalysts: Collaborator[] = [
       'Karine mantém padrões elevados como estrela no topo da árvore. Seu comprometimento com excelência inspira toda a equipe a dar o melhor.',
   },
   {
-    photo: './collaborators/taissa.jpeg',
+    photo: '/collaborators/taissa.jpeg',
     name: 'Taissa',
     role: 'QA',
     team: 'QA',
@@ -359,7 +359,7 @@ const qaAnalysts: Collaborator[] = [
       'Taissa transforma requisitos em código elegante com a maestria de artista decorando árvore. Cada função é uma obra de arte funcional.',
   },
   {
-    photo: './collaborators/rodrigo.jpeg',
+    photo: '/collaborators/rodrigo.jpeg',
     name: 'Rodrigo Ruviaro',
     role: 'QA',
     team: 'TA',
@@ -368,7 +368,7 @@ const qaAnalysts: Collaborator[] = [
       'Rodrigo ilumina projetos com soluções inovadoras que brilham como fogos de fim de ano. Cada contribuição sua adiciona magia ao código.',
   },
   {
-    photo: './collaborators/vitor.jpeg',
+    photo: '/collaborators/vitor.jpeg',
     name: 'Vitor Loli',
     role: 'QA',
     team: 'TA',
@@ -381,7 +381,7 @@ const qaAnalysts: Collaborator[] = [
 // RPA
 const rpaAnalysts: Collaborator[] = [
   {
-    photo: './collaborators/rafael.jpeg',
+    photo: '/collaborators/rafael.jpeg',
     name: 'Rafael',
     role: 'RPA',
     team: 'RPA',
