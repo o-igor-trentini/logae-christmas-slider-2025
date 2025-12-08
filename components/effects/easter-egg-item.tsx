@@ -1,5 +1,7 @@
 'use client';
 
+import { useMemo } from 'react';
+
 import Image from 'next/image';
 
 import { motion } from 'framer-motion';
@@ -21,6 +23,11 @@ interface EasterEggItemProps {
 }
 
 export function EasterEggItem({ egg }: EasterEggItemProps) {
+  // Gera valores de rotação uma única vez para evitar mudanças durante a animação
+  const rotationValues = useMemo(() => {
+    return [0, Math.random() * 360, Math.random() * 360];
+  }, [egg.id]);
+
   return (
     <motion.div
       key={egg.id}
@@ -35,7 +42,7 @@ export function EasterEggItem({ egg }: EasterEggItemProps) {
         top: `${egg.endY}%`,
         opacity: [0, 1, 1, 0],
         scale: [0, 1, 1, 0],
-        rotate: [0, Math.random() * 360, Math.random() * 360],
+        rotate: rotationValues,
       }}
       transition={{
         duration: egg.duration,
