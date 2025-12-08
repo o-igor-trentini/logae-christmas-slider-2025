@@ -1,11 +1,16 @@
+const setConfig = (local, prod) => {
+  return process.env.NODE_ENV === 'production' ? prod : local
+}
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
   },
-  basePath: '/logae-christmas-slider-2025',
-  assetPrefix: '/logae-christmas-slider-2025',
+  // Aplica basePath apenas em produção (GitHub Pages)
+  basePath: setConfig('', '/logae-christmas-slider-2025'),
+  assetPrefix: setConfig('', '/logae-christmas-slider-2025'),
 }
 
 export default nextConfig
