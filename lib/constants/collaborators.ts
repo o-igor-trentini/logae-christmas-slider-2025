@@ -8,8 +8,8 @@ export interface Collaborator {
   fullDescription: string
 }
 
-// Constante com todos os colaboradores fixos
-export const COLLABORATORS: Collaborator[] = [
+// Arquitetos
+const architects: Collaborator[] = [
   {
     photo: '/collaborators/isaque.jpeg',
     name: 'Isaque Klassmann',
@@ -28,6 +28,19 @@ export const COLLABORATORS: Collaborator[] = [
     fullDescription:
       'Jefferson constrói fundações tão robustas que suportariam até o peso de todos os presentes do mundo. Sua expertise em backend é lendária.',
   },
+  {
+    photo: '/collaborators/geferson-barba.jpeg',
+    name: 'Geferson Ludvig',
+    role: 'Arquiteto',
+    team: 'Arquitetura/DevOps',
+    description: 'DevOps mágico como oficina automatizada.',
+    fullDescription:
+      'Geferson automatiza processos com a eficiência de uma fábrica de brinquedos moderna. Seus pipelines fluem como trenó em noite estrelada.',
+  },
+]
+
+// BI
+const biAnalysts: Collaborator[] = [
   {
     photo: '/collaborators/cris.jpeg',
     name: 'Cris',
@@ -55,6 +68,10 @@ export const COLLABORATORS: Collaborator[] = [
     fullDescription:
       'Wesley protege aplicações com o cuidado de guardião dos presentes do Papai Noel. Nenhuma vulnerabilidade passa despercebida por sua vigilância.',
   },
+]
+
+// Desenvolvedores
+const developers: Collaborator[] = [
   {
     photo: '/collaborators/eduardo-maltauro.jpeg',
     name: 'Eduardo Maltauro',
@@ -90,15 +107,6 @@ export const COLLABORATORS: Collaborator[] = [
     description: 'Full stack como pilha de presentes.',
     fullDescription:
       'Gabriel domina todas as camadas da aplicação como o Papai Noel conhece todas as chaminés do mundo. Seu conhecimento abrangente é presente que nunca para de dar.',
-  },
-  {
-    photo: '/collaborators/geferson-barba.jpeg',
-    name: 'Geferson Ludvig',
-    role: 'Arquiteto',
-    team: 'Arquitetura/DevOps',
-    description: 'DevOps mágico como oficina automatizada.',
-    fullDescription:
-      'Geferson automatiza processos com a eficiência de uma fábrica de brinquedos moderna. Seus pipelines fluem como trenó em noite estrelada.',
   },
   {
     photo: '/collaborators/guilherme.jpeg',
@@ -155,15 +163,6 @@ export const COLLABORATORS: Collaborator[] = [
       'Murilo domina todo o ecossistema de desenvolvimento como chef prepara banquete natalino. Sua versatilidade é ingrediente secreto de projetos bem-sucedidos.',
   },
   {
-    photo: '/collaborators/rafael.jpeg',
-    name: 'Rafael',
-    role: 'RPA',
-    team: 'RPA',
-    description: 'Soluções criativas como enfeites artesanais.',
-    fullDescription:
-      'Rafael aborda problemas de ângulos únicos, criando soluções tão originais quanto decorações feitas à mão. Sua criatividade não conhece limites festivos.',
-  },
-  {
     photo: '/collaborators/rhuan.jpeg',
     name: 'Rhuan Klassmann',
     role: 'Desenvolvedor',
@@ -171,15 +170,6 @@ export const COLLABORATORS: Collaborator[] = [
     description: 'Debugging preciso como mira de elfo arqueiro.',
     fullDescription:
       'Rhuan encontra e corrige bugs com precisão cirúrgica. Sua habilidade de rastreamento faz dele o Sherlock Holmes do código natalino.',
-  },
-  {
-    photo: '/collaborators/rodrigo.jpeg',
-    name: 'Rodrigo Ruviaro',
-    role: 'QA',
-    team: 'TA',
-    description: 'Inovação técnica como fogos de artifício festivos.',
-    fullDescription:
-      'Rodrigo ilumina projetos com soluções inovadoras que brilham como fogos de fim de ano. Cada contribuição sua adiciona magia ao código.',
   },
   {
     photo: '/collaborators/vini-abreu.jpeg',
@@ -200,15 +190,6 @@ export const COLLABORATORS: Collaborator[] = [
       'Vinícius Hartmann automatiza processos com eficiência de fábrica de brinquedos moderna. Cada script criado libera tempo para mais inovação.',
   },
   {
-    photo: '/collaborators/vitor.jpeg',
-    name: 'Vitor Loli',
-    role: 'QA',
-    team: 'TA',
-    description: 'Testes automatizados são sua garantia de qualidade.',
-    fullDescription:
-      'Vitor garante que cada funcionalidade funcione perfeitamente, como mecânico que testa trenó antes da grande viagem. Sua dedicação à qualidade é inspiradora.',
-  },
-  {
     photo: '/collaborators/welerson.jpeg',
     name: 'Welerson Bugança',
     role: 'Desenvolvedor',
@@ -218,6 +199,46 @@ export const COLLABORATORS: Collaborator[] = [
       'Welerson mantém pipeline de desenvolvimento fluindo suavemente como canção de Natal. Seus processos CI/CD são exemplares como coral afinado.',
   },
   {
+    photo: '/collaborators/igor.jpeg',
+    name: 'Igor Trentini',
+    role: 'Desenvolvedor',
+    team: 'PEC',
+    description: 'Lidera como Papai Noel lidera os elfos.',
+    fullDescription:
+      'Igor guia a equipe com a sabedoria de quem conhece cada detalhe da oficina. Sua liderança técnica transforma desafios em conquistas memoráveis.',
+  },
+  {
+    photo: '/collaborators/ia_dieison.jpeg',
+    name: 'IA Dieison',
+    role: 'Desenvolvedor',
+    team: 'IA',
+    description: 'Inteligência artificial com espírito natalino.',
+    fullDescription:
+      'IA Dieison processa dados com a eficiência de uma fábrica de brinquedos automatizada. Seu aprendizado contínuo é como a magia do Natal que nunca acaba.',
+  },
+  {
+    photo: '/collaborators/ia_nathan.jpeg',
+    name: 'IA Nathan',
+    role: 'Desenvolvedor',
+    team: 'IA',
+    description: 'Machine learning mais rápido que trenó supersônico.',
+    fullDescription:
+      'IA Nathan analisa padrões com precisão cirúrgica, como se estivesse organizando presentes por categoria. Sua capacidade de predição impressiona até os elfos mais experientes.',
+  },
+  {
+    photo: '/collaborators/ia_vinicius.jpeg',
+    name: 'IA Vinícius',
+    role: 'Desenvolvedor',
+    team: 'IA',
+    description: 'Algoritmos inteligentes envoltos em papel de presente.',
+    fullDescription:
+      'IA Vinícius combina lógica computacional com criatividade humana. Suas soluções baseadas em IA são como presentes que se adaptam perfeitamente a cada necessidade.',
+  },
+]
+
+// DevOps
+const devOps: Collaborator[] = [
+  {
     photo: '/collaborators/magro.jpeg',
     name: 'Mateus Magro',
     role: 'DevOps',
@@ -226,6 +247,10 @@ export const COLLABORATORS: Collaborator[] = [
     fullDescription:
       'Mateus Magro projeta sistemas que crescem harmoniosamente como árvore bem cuidada. Sua visão técnica prepara o terreno para futuras expansões.',
   },
+]
+
+// Gerentes
+const managers: Collaborator[] = [
   {
     photo: '/collaborators/cleimar.jpeg',
     name: 'Cleimar Casagrande',
@@ -235,6 +260,10 @@ export const COLLABORATORS: Collaborator[] = [
     fullDescription:
       'Veterano da equipe, Cleimar tem experiência suficiente para ensinar até o Papai Noel a otimizar rotas. Seu conhecimento técnico é lendário como as histórias de Natal.',
   },
+]
+
+// PO
+const productOwners: Collaborator[] = [
   {
     photo: '/collaborators/ariele.jpeg',
     name: 'Ariele Fernandes',
@@ -280,6 +309,10 @@ export const COLLABORATORS: Collaborator[] = [
     fullDescription:
       'Ygor cria experiências visuais encantadoras que capturam espírito natalino. Cada componente é crafted com paixão e precisão técnica excepcional.',
   },
+]
+
+// QA
+const qaAnalysts: Collaborator[] = [
   {
     photo: '/collaborators/adailton.jpeg',
     name: 'Adailton Teixeira',
@@ -317,39 +350,46 @@ export const COLLABORATORS: Collaborator[] = [
       'Taissa transforma requisitos em código elegante com a maestria de artista decorando árvore. Cada função é uma obra de arte funcional.',
   },
   {
-    photo: '/collaborators/igor.jpeg',
-    name: 'Igor Trentini',
-    role: 'Desenvolvedor',
-    team: 'PEC',
-    description: 'Lidera como Papai Noel lidera os elfos.',
+    photo: '/collaborators/rodrigo.jpeg',
+    name: 'Rodrigo Ruviaro',
+    role: 'QA',
+    team: 'TA',
+    description: 'Inovação técnica como fogos de artifício festivos.',
     fullDescription:
-      'Igor guia a equipe com a sabedoria de quem conhece cada detalhe da oficina. Sua liderança técnica transforma desafios em conquistas memoráveis.',
-  },
-    {
-    photo: '/collaborators/ia_dieison.jpeg',
-    name: 'IA Dieison',
-    role: 'Desenvolvedor',
-    team: 'IA',
-    description: 'Inteligência artificial com espírito natalino.',
-    fullDescription:
-      'IA Dieison processa dados com a eficiência de uma fábrica de brinquedos automatizada. Seu aprendizado contínuo é como a magia do Natal que nunca acaba.',
+      'Rodrigo ilumina projetos com soluções inovadoras que brilham como fogos de fim de ano. Cada contribuição sua adiciona magia ao código.',
   },
   {
-    photo: '/collaborators/ia_nathan.jpeg',
-    name: 'IA Nathan',
-    role: 'Desenvolvedor',
-    team: 'IA',
-    description: 'Machine learning mais rápido que trenó supersônico.',
+    photo: '/collaborators/vitor.jpeg',
+    name: 'Vitor Loli',
+    role: 'QA',
+    team: 'TA',
+    description: 'Testes automatizados são sua garantia de qualidade.',
     fullDescription:
-      'IA Nathan analisa padrões com precisão cirúrgica, como se estivesse organizando presentes por categoria. Sua capacidade de predição impressiona até os elfos mais experientes.',
+      'Vitor garante que cada funcionalidade funcione perfeitamente, como mecânico que testa trenó antes da grande viagem. Sua dedicação à qualidade é inspiradora.',
   },
+]
+
+// RPA
+const rpaAnalysts: Collaborator[] = [
   {
-    photo: '/collaborators/ia_vinicius.jpeg',
-    name: 'IA Vinícius',
-    role: 'Desenvolvedor',
-    team: 'IA',
-    description: 'Algoritmos inteligentes envoltos em papel de presente.',
+    photo: '/collaborators/rafael.jpeg',
+    name: 'Rafael',
+    role: 'RPA',
+    team: 'RPA',
+    description: 'Soluções criativas como enfeites artesanais.',
     fullDescription:
-      'IA Vinícius combina lógica computacional com criatividade humana. Suas soluções baseadas em IA são como presentes que se adaptam perfeitamente a cada necessidade.',
+      'Rafael aborda problemas de ângulos únicos, criando soluções tão originais quanto decorações feitas à mão. Sua criatividade não conhece limites festivos.',
   },
+]
+
+// Constante exportada com todos os colaboradores unificados
+export const COLLABORATORS: Collaborator[] = [
+  ...architects,
+  ...biAnalysts,
+  ...developers,
+  ...devOps,
+  ...managers,
+  ...productOwners,
+  ...qaAnalysts,
+  ...rpaAnalysts,
 ]
