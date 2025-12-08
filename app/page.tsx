@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -9,63 +9,26 @@ import { FloatingEasterEggs } from '@/components/effects/floating-easter-eggs';
 import { SlideControls } from '@/components/navigation/slide-controls';
 import { SlideNavigation } from '@/components/navigation/slide-navigation';
 import { CollaboratorSlide } from '@/components/slides/collaborator-slide';
-import {
-  FirefightersSlide,
-  type FirefightersData,
-} from '@/components/slides/firefighters-slide';
+import { FirefightersSlide } from '@/components/slides/firefighters-slide';
 import { StatisticSlideComponent } from '@/components/slides/statistic-slide';
-import { COLLABORATORS, type Collaborator } from '@/lib/constants/collaborators';
-import {
-  STATISTICS_SLIDES,
-  type StatisticSlide,
-} from '@/lib/constants/statistics';
-
-// Tipos para os slides
-type SlideType =
-  | { type: 'collaborator'; data: Collaborator }
-  | { type: 'statistic'; data: StatisticSlide }
-  | { type: 'firefighters'; data: FirefightersData };
-
-const ALL_SLIDES: SlideType[] = [
-  ...COLLABORATORS.flatMap((collaborator, index) => {
-    const slides: SlideType[] = [{ type: 'collaborator', data: collaborator }];
-    if ((index + 1) % 2 === 0) {
-      slides.push({
-        type: 'statistic',
-        data: STATISTICS_SLIDES[Math.floor(index / 2)],
-      });
-    }
-    return slides;
-  }),
-  ...STATISTICS_SLIDES.slice(Math.ceil(COLLABORATORS.length / 2)).map(
-    (stat) => ({
-      type: 'statistic' as const,
-      data: stat,
-    })
-  ),
-  {
-    type: 'firefighters' as const,
-    data: {
-      title: 'Bombeiros Especializados',
-      emoji: '🚒',
-      mainStat: '0',
-      mainStatLabel: 'incêndios na produção',
-      description:
-        "Nosso time é como bombeiros altamente especializados. Quanto menos 'incêndios' (bugs e demandas urgentes) temos que apagar, mais eficiente é nossa operação.",
-      benefits: [
-        'Deploy bem-sucedido = incêndio evitado',
-        'Bug prevenido = economia de tempo',
-        'Demanda urgente evitada = trabalho estratégico',
-        'Estamos construindo uma cultura de qualidade',
-      ],
-    },
-  },
-];
+import { generateSlides } from '@/lib/utils/slide-generator';
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlay, setIsAutoPlay] = useState(true);
   const [direction, setDirection] = useState(0);
+
+  // Gera os slides uma única vez com a configuração desejada
+  const ALL_SLIDES = useMemo(
+    () =>
+      generateSlides({
+        collaboratorsPerStatistic: 2, // A cada 2 colaboradores, mostra 1 estatística
+        includeFirefighters: true, // Inclui slide de bombeiros no final
+        shuffleCollaborators: false, // Não embaralha colaboradores
+        shuffleStatistics: false, // Não embaralha estatísticas
+      }),
+    []
+  );
 
   useEffect(() => {
     if (!isAutoPlay) return;
