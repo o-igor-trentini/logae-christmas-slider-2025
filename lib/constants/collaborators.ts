@@ -11,7 +11,7 @@ export interface Collaborator {
 // Arquitetos
 const architects: Collaborator[] = [
   {
-    photo: '/collaborators/isaque.jpeg',
+    photo: './collaborators/isaque.jpeg',
     name: 'Isaque Klassmann',
     role: 'Arquiteto',
     team: 'Arquitetura/DevOps',
