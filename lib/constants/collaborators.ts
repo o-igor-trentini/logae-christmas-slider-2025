@@ -29,7 +29,7 @@ const architects: Collaborator[] = [
       'Jefferson constrói fundações tão robustas que suportariam até o peso de todos os presentes do mundo. Sua expertise em backend é lendária.',
   },
   {
-    photo: '/collaborators/geferson-barba.jpeg',
+    photo: '/collaborators/geferson.jpeg',
     name: 'Geferson Ludvig',
     role: 'Arquiteto',
     team: 'Arquitetura/DevOps',
@@ -199,6 +199,15 @@ const developers: Collaborator[] = [
       'Welerson mantém pipeline de desenvolvimento fluindo suavemente como canção de Natal. Seus processos CI/CD são exemplares como coral afinado.',
   },
   {
+    photo: '/collaborators/tarcisio.jpeg',
+    name: 'Tarcísio',
+    role: 'Desenvolvedor',
+    team: 'PEC',
+    description: 'Código eficiente como trenó otimizado.',
+    fullDescription:
+      'Tarcísio desenvolve soluções com precisão e eficiência. Sua dedicação ao código limpo e funcional é como presente bem embrulhado que todos adoram receber.',
+  },
+  {
     photo: '/collaborators/igor.jpeg',
     name: 'Igor Trentini',
     role: 'Desenvolvedor',
@@ -208,7 +217,7 @@ const developers: Collaborator[] = [
       'Igor guia a equipe com a sabedoria de quem conhece cada detalhe da oficina. Sua liderança técnica transforma desafios em conquistas memoráveis.',
   },
   {
-    photo: '/collaborators/ia_dieison.jpeg',
+    photo: '/collaborators/ia-dieison.jpeg',
     name: 'IA Dieison',
     role: 'Desenvolvedor',
     team: 'IA',
@@ -217,7 +226,7 @@ const developers: Collaborator[] = [
       'IA Dieison processa dados com a eficiência de uma fábrica de brinquedos automatizada. Seu aprendizado contínuo é como a magia do Natal que nunca acaba.',
   },
   {
-    photo: '/collaborators/ia_nathan.jpeg',
+    photo: '/collaborators/ia-nathan.jpeg',
     name: 'IA Nathan',
     role: 'Desenvolvedor',
     team: 'IA',
@@ -226,7 +235,7 @@ const developers: Collaborator[] = [
       'IA Nathan analisa padrões com precisão cirúrgica, como se estivesse organizando presentes por categoria. Sua capacidade de predição impressiona até os elfos mais experientes.',
   },
   {
-    photo: '/collaborators/ia_vinicius.jpeg',
+    photo: '/collaborators/ia-vinicius.jpeg',
     name: 'IA Vinícius',
     role: 'Desenvolvedor',
     team: 'IA',
@@ -239,7 +248,7 @@ const developers: Collaborator[] = [
 // DevOps
 const devOps: Collaborator[] = [
   {
-    photo: '/collaborators/magro.jpeg',
+    photo: '/collaborators/mateus-m.jpeg',
     name: 'Mateus Magro',
     role: 'DevOps',
     team: 'Arquitetura/DevOps',
