@@ -13,6 +13,7 @@ interface FloatingEasterEgg {
   endX: number;
   endY: number;
   duration: number;
+  createdAt: number;
 }
 
 interface EasterEggItemProps {

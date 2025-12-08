@@ -30,6 +30,7 @@ export function generateEasterEggs(): FloatingEasterEgg[] {
       endX,
       endY,
       duration,
+      createdAt: Date.now(),
     });
   }
 

@@ -14,14 +14,29 @@ export function FloatingEasterEggs() {
       const newEggs = generateEasterEggs();
       setEggs((prev) => [...prev, ...newEggs]);
 
-      // Limpar eggs antigos e gerar novos periodicamente
+      // Agendar próxima geração
       setTimeout(() => {
-        setEggs((prev) => prev.slice(-3)); // Manter apenas os últimos 3
         runGeneration();
       }, 10000);
     };
 
+    // Limpar eggs que já completaram sua animação
+    const cleanupInterval = setInterval(() => {
+      const now = Date.now();
+      setEggs((prev) =>
+        prev.filter((egg) => {
+          const eggAge = now - egg.createdAt;
+          // Remove apenas eggs que completaram sua animação (duration em ms)
+          return eggAge < egg.duration * 1000;
+        })
+      );
+    }, 2000); // Verifica a cada 2 segundos
+
     runGeneration();
+
+    return () => {
+      clearInterval(cleanupInterval);
+    };
   }, []);
 
   return (
