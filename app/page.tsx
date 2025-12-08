@@ -22,13 +22,13 @@ import {
 
 // Tipos para os slides
 type SlideType =
-  | { type: 'colaborador'; data: Collaborator }
+  | { type: 'collaborator'; data: Collaborator }
   | { type: 'statistic'; data: StatisticSlide }
   | { type: 'firefighters'; data: FirefightersData };
 
 const ALL_SLIDES: SlideType[] = [
-  ...COLLABORATORS.flatMap((colab, index) => {
-    const slides: SlideType[] = [{ type: 'colaborador', data: colab }];
+  ...COLLABORATORS.flatMap((collaborator, index) => {
+    const slides: SlideType[] = [{ type: 'collaborator', data: collaborator }];
     if ((index + 1) % 2 === 0) {
       slides.push({
         type: 'statistic',
@@ -149,7 +149,7 @@ export default function Home() {
             }}
             className='absolute inset-0 overflow-y-auto'
           >
-            {slide?.type === 'colaborador' ? (
+            {slide?.type === 'collaborator' ? (
               <CollaboratorSlide data={slide.data} />
             ) : slide?.type === 'statistic' ? (
               <StatisticSlideComponent data={slide.data} />
