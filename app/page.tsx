@@ -8,7 +8,7 @@ import { EasterEggHandler } from '@/components/effects/easter-egg-handler';
 import { FloatingEasterEggs } from '@/components/effects/floating-easter-eggs';
 import { SlideControls } from '@/components/navigation/slide-controls';
 import { SlideNavigation } from '@/components/navigation/slide-navigation';
-import { ColaboradorSlide } from '@/components/slides/colaborador-slide';
+import { CollaboratorSlide } from '@/components/slides/collaborator-slide';
 import {
   FirefightersSlide,
   type FirefightersData,
@@ -150,7 +150,7 @@ export default function Home() {
             className='absolute inset-0 overflow-y-auto'
           >
             {slide?.type === 'colaborador' ? (
-              <ColaboradorSlide data={slide.data} />
+              <CollaboratorSlide data={slide.data} />
             ) : slide?.type === 'statistic' ? (
               <StatisticSlideComponent data={slide.data} />
             ) : slide?.type === 'firefighters' ? (

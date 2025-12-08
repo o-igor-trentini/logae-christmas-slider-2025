@@ -1,355 +1,355 @@
 // Tipo para colaborador
 export interface Collaborator {
-  foto: string
-  nome: string
-  funcao: string
-  time: string
-  descricao: string
-  descricaoCompleta: string
+  photo: string
+  name: string
+  role: string
+  team: string
+  description: string
+  fullDescription: string
 }
 
 // Constante com todos os colaboradores fixos
 export const COLLABORATORS: Collaborator[] = [
   {
-    foto: '/collaborators/isaque.jpeg',
-    nome: 'Isaque Klassmann',
-    funcao: 'Arquiteto',
-    time: 'Arquitetura/DevOps',
-    descricao: 'Código testado é seu compromisso natalino.',
-    descricaoCompleta:
+    photo: '/collaborators/isaque.jpeg',
+    name: 'Isaque Klassmann',
+    role: 'Arquiteto',
+    team: 'Arquitetura/DevOps',
+    description: 'Código testado é seu compromisso natalino.',
+    fullDescription:
       'Isaque garante qualidade em cada entrega como se estivesse embrulhando presentes premium. Seus testes são tão rigorosos quanto a lista do Papai Noel.',
   },
   {
-    foto: '/collaborators/jefferson.jpeg',
-    nome: 'Jefferson Valcarenki',
-    funcao: 'Arquiteto',
-    time: 'Arquitetura/DevOps',
-    descricao: 'Backend sólido como base de árvore centenária.',
-    descricaoCompleta:
+    photo: '/collaborators/jefferson.jpeg',
+    name: 'Jefferson Valcarenki',
+    role: 'Arquiteto',
+    team: 'Arquitetura/DevOps',
+    description: 'Backend sólido como base de árvore centenária.',
+    fullDescription:
       'Jefferson constrói fundações tão robustas que suportariam até o peso de todos os presentes do mundo. Sua expertise em backend é lendária.',
   },
   {
-    foto: '/collaborators/cris.jpeg',
-    nome: 'Cris',
-    funcao: 'BI',
-    time: 'BI',
-    descricao: 'Qualidade de código é tradição natalina.',
-    descricaoCompleta:
+    photo: '/collaborators/cris.jpeg',
+    name: 'Cris',
+    role: 'BI',
+    team: 'BI',
+    description: 'Qualidade de código é tradição natalina.',
+    fullDescription:
       'Cris mantém os padrões de qualidade tão altos quanto a estrela no topo da árvore. Seu comprometimento com excelência inspira toda a equipe.',
   },
   {
-    foto: '/collaborators/douglas.jpeg',
-    nome: 'Douglas',
-    funcao: 'BI',
-    time: 'BI',
-    descricao: 'Arquitetura sólida como base de árvore gigante.',
-    descricaoCompleta:
+    photo: '/collaborators/douglas.jpeg',
+    name: 'Douglas',
+    role: 'BI',
+    team: 'BI',
+    description: 'Arquitetura sólida como base de árvore gigante.',
+    fullDescription:
       'Douglas constrói fundações tão robustas que suportariam até o peso de todos os presentes do mundo. Sua expertise em arquitetura é presente que nunca para de dar.',
   },
   {
-    foto: '/collaborators/wesley.jpeg',
-    nome: 'Wesley',
-    funcao: 'BI',
-    time: 'BI',
-    descricao: 'Segurança de código como cofre de presentes.',
-    descricaoCompleta:
+    photo: '/collaborators/wesley.jpeg',
+    name: 'Wesley',
+    role: 'BI',
+    team: 'BI',
+    description: 'Segurança de código como cofre de presentes.',
+    fullDescription:
       'Wesley protege aplicações com o cuidado de guardião dos presentes do Papai Noel. Nenhuma vulnerabilidade passa despercebida por sua vigilância.',
   },
   {
-    foto: '/collaborators/eduardo-maltauro.jpeg',
-    nome: 'Eduardo Maltauro',
-    funcao: 'Desenvolvedor',
-    time: 'Siga Verd-e',
-    descricao: 'Performance é seu combustível de trenó voador.',
-    descricaoCompleta:
+    photo: '/collaborators/eduardo-maltauro.jpeg',
+    name: 'Eduardo Maltauro',
+    role: 'Desenvolvedor',
+    team: 'Siga Verd-e',
+    description: 'Performance é seu combustível de trenó voador.',
+    fullDescription:
       'Eduardo otimiza aplicações com a mesma precisão que o Papai Noel calcula suas rotas. Cada milissegundo economizado é como um presente extra debaixo da árvore.',
   },
   {
-    foto: '/collaborators/eduardo-pilonetto.jpeg',
-    nome: 'Eduardo Pilonetto',
-    funcao: 'Desenvolvedor',
-    time: 'eCentral',
-    descricao: 'Debugger profissional certificado pelo Polo Norte.',
-    descricaoCompleta:
+    photo: '/collaborators/eduardo-pilonetto.jpeg',
+    name: 'Eduardo Pilonetto',
+    role: 'Desenvolvedor',
+    team: 'eCentral',
+    description: 'Debugger profissional certificado pelo Polo Norte.',
+    fullDescription:
       'Com paciência de elfo experiente, Eduardo rastreia bugs como se estivesse seguindo pegadas na neve. Nenhum erro escapa de sua análise detalhada.',
   },
   {
-    foto: '/collaborators/eraldo.jpeg',
-    nome: 'Eraldo',
-    funcao: 'Desenvolvedor',
-    time: 'eTorre',
-    descricao: 'Inovação constante é seu presente diário.',
-    descricaoCompleta:
+    photo: '/collaborators/eraldo.jpeg',
+    name: 'Eraldo',
+    role: 'Desenvolvedor',
+    team: 'eTorre',
+    description: 'Inovação constante é seu presente diário.',
+    fullDescription:
       'Eraldo explora novas tecnologias com curiosidade de criança na manhã de Natal. Cada projeto é uma oportunidade de aprender e ensinar algo novo.',
   },
   {
-    foto: '/collaborators/gabriel.jpeg',
-    nome: 'Gabriel Stringhini',
-    funcao: 'Desenvolvedor',
-    time: '???',
-    descricao: 'Full stack como pilha de presentes.',
-    descricaoCompleta:
+    photo: '/collaborators/gabriel.jpeg',
+    name: 'Gabriel Stringhini',
+    role: 'Desenvolvedor',
+    team: '???',
+    description: 'Full stack como pilha de presentes.',
+    fullDescription:
       'Gabriel domina todas as camadas da aplicação como o Papai Noel conhece todas as chaminés do mundo. Seu conhecimento abrangente é presente que nunca para de dar.',
   },
   {
-    foto: '/collaborators/geferson-barba.jpeg',
-    nome: 'Geferson Ludvig',
-    funcao: 'Arquiteto',
-    time: 'Arquitetura/DevOps',
-    descricao: 'DevOps mágico como oficina automatizada.',
-    descricaoCompleta:
+    photo: '/collaborators/geferson-barba.jpeg',
+    name: 'Geferson Ludvig',
+    role: 'Arquiteto',
+    team: 'Arquitetura/DevOps',
+    description: 'DevOps mágico como oficina automatizada.',
+    fullDescription:
       'Geferson automatiza processos com a eficiência de uma fábrica de brinquedos moderna. Seus pipelines fluem como trenó em noite estrelada.',
   },
   {
-    foto: '/collaborators/guilherme.jpeg',
-    nome: 'Guilherme Borges',
-    funcao: 'Desenvolvedor',
-    time: 'eCentral',
-    descricao: 'Criatividade que brilha como luzes coloridas.',
-    descricaoCompleta:
+    photo: '/collaborators/guilherme.jpeg',
+    name: 'Guilherme Borges',
+    role: 'Desenvolvedor',
+    team: 'eCentral',
+    description: 'Criatividade que brilha como luzes coloridas.',
+    fullDescription:
       'Guilherme traz ideias frescas e inovadoras para cada projeto, como flocos de neve únicos. Sua criatividade transforma desafios em oportunidades mágicas.',
   },
   {
-    foto: '/collaborators/hiuri.jpeg',
-    nome: 'Hiuri Xavier',
-    funcao: 'Desenvolvedor',
-    time: 'eCentral',
-    descricao: 'Agilidade ninja em código festivo.',
-    descricaoCompleta:
+    photo: '/collaborators/hiuri.jpeg',
+    name: 'Hiuri Xavier',
+    role: 'Desenvolvedor',
+    team: 'eCentral',
+    description: 'Agilidade ninja em código festivo.',
+    fullDescription:
       'Hiuri se move pelo código com a agilidade de um elfo experiente. Sua velocidade de entrega faz até as renas do Papai Noel parecerem lentas.',
   },
   {
-    foto: '/collaborators/jucian.jpeg',
-    nome: 'Jucian Decazena',
-    funcao: 'Desenvolvedor',
-    time: 'ePonto',
-    descricao: 'Resolução de problemas é seu superpoder festivo.',
-    descricaoCompleta:
+    photo: '/collaborators/jucian.jpeg',
+    name: 'Jucian Decazena',
+    role: 'Desenvolvedor',
+    team: 'ePonto',
+    description: 'Resolução de problemas é seu superpoder festivo.',
+    fullDescription:
       'Jucian enfrenta desafios técnicos com a determinação de quem escala chaminés estreitas. Sua capacidade analítica ilumina soluções como velas de Natal.',
   },
   {
-    foto: '/collaborators/lucas.jpeg',
-    nome: 'Lucas',
-    funcao: 'Desenvolvedor',
-    time: 'ePonto',
-    descricao: 'Código limpo como neve recém-caída.',
-    descricaoCompleta:
+    photo: '/collaborators/lucas.jpeg',
+    name: 'Lucas',
+    role: 'Desenvolvedor',
+    team: 'ePonto',
+    description: 'Código limpo como neve recém-caída.',
+    fullDescription:
       'Lucas escreve código tão puro e organizado quanto paisagem nevada intocada. Sua atenção aos detalhes garante entregas impecáveis.',
   },
   {
-    foto: '/collaborators/mateus-s.jpeg',
-    nome: 'Mateus Schverz',
-    funcao: 'Desenvolvedor',
-    time: 'ePonto',
-    descricao: 'Performance otimizada é sua meta de ano novo.',
-    descricaoCompleta:
+    photo: '/collaborators/mateus-s.jpeg',
+    name: 'Mateus Schverz',
+    role: 'Desenvolvedor',
+    team: 'ePonto',
+    description: 'Performance otimizada é sua meta de ano novo.',
+    fullDescription:
       'Mateus Schverz transforma aplicações lentas em foguetes supersônicos. Sua paixão por performance faz cada usuário sentir a magia da velocidade.',
   },
   {
-    foto: '/collaborators/murilo.jpeg',
-    nome: 'Murilo Casagrande',
-    funcao: 'Desenvolvedor',
-    time: 'eTorre',
-    descricao: 'Full stack completo como ceia de Natal.',
-    descricaoCompleta:
+    photo: '/collaborators/murilo.jpeg',
+    name: 'Murilo Casagrande',
+    role: 'Desenvolvedor',
+    team: 'eTorre',
+    description: 'Full stack completo como ceia de Natal.',
+    fullDescription:
       'Murilo domina todo o ecossistema de desenvolvimento como chef prepara banquete natalino. Sua versatilidade é ingrediente secreto de projetos bem-sucedidos.',
   },
   {
-    foto: '/collaborators/rafael.jpeg',
-    nome: 'Rafael',
-    funcao: 'RPA',
-    time: 'RPA',
-    descricao: 'Soluções criativas como enfeites artesanais.',
-    descricaoCompleta:
+    photo: '/collaborators/rafael.jpeg',
+    name: 'Rafael',
+    role: 'RPA',
+    team: 'RPA',
+    description: 'Soluções criativas como enfeites artesanais.',
+    fullDescription:
       'Rafael aborda problemas de ângulos únicos, criando soluções tão originais quanto decorações feitas à mão. Sua criatividade não conhece limites festivos.',
   },
   {
-    foto: '/collaborators/rhuan.jpeg',
-    nome: 'Rhuan Klassmann',
-    funcao: 'Desenvolvedor',
-    time: 'eTorre',
-    descricao: 'Debugging preciso como mira de elfo arqueiro.',
-    descricaoCompleta:
+    photo: '/collaborators/rhuan.jpeg',
+    name: 'Rhuan Klassmann',
+    role: 'Desenvolvedor',
+    team: 'eTorre',
+    description: 'Debugging preciso como mira de elfo arqueiro.',
+    fullDescription:
       'Rhuan encontra e corrige bugs com precisão cirúrgica. Sua habilidade de rastreamento faz dele o Sherlock Holmes do código natalino.',
   },
   {
-    foto: '/collaborators/rodrigo.jpeg',
-    nome: 'Rodrigo Ruviaro',
-    funcao: 'QA',
-    time: 'TA',
-    descricao: 'Inovação técnica como fogos de artifício festivos.',
-    descricaoCompleta:
+    photo: '/collaborators/rodrigo.jpeg',
+    name: 'Rodrigo Ruviaro',
+    role: 'QA',
+    team: 'TA',
+    description: 'Inovação técnica como fogos de artifício festivos.',
+    fullDescription:
       'Rodrigo ilumina projetos com soluções inovadoras que brilham como fogos de fim de ano. Cada contribuição sua adiciona magia ao código.',
   },
   {
-    foto: '/collaborators/vini-abreu.jpeg',
-    nome: 'Vinícius Abreu',
-    funcao: 'Desenvolvedor',
-    time: 'ePonto',
-    descricao: 'Code review minucioso como lista de Papai Noel.',
-    descricaoCompleta:
+    photo: '/collaborators/vini-abreu.jpeg',
+    name: 'Vinícius Abreu',
+    role: 'Desenvolvedor',
+    team: 'ePonto',
+    description: 'Code review minucioso como lista de Papai Noel.',
+    fullDescription:
       'Vinícius Abreu revisa código com atenção aos mínimos detalhes. Seus feedbacks construtivos elevam qualidade de todo o time como coro natalino.',
   },
   {
-    foto: '/collaborators/vini-hartmann.jpeg',
-    nome: 'Vinícius Hartmann',
-    funcao: 'Desenvolvedor',
-    time: 'eTorre',
-    descricao: 'Automação inteligente é seu elfo ajudante.',
-    descricaoCompleta:
+    photo: '/collaborators/vini-hartmann.jpeg',
+    name: 'Vinícius Hartmann',
+    role: 'Desenvolvedor',
+    team: 'eTorre',
+    description: 'Automação inteligente é seu elfo ajudante.',
+    fullDescription:
       'Vinícius Hartmann automatiza processos com eficiência de fábrica de brinquedos moderna. Cada script criado libera tempo para mais inovação.',
   },
   {
-    foto: '/collaborators/vitor.jpeg',
-    nome: 'Vitor Loli',
-    funcao: 'QA',
-    time: 'TA',
-    descricao: 'Testes automatizados são sua garantia de qualidade.',
-    descricaoCompleta:
+    photo: '/collaborators/vitor.jpeg',
+    name: 'Vitor Loli',
+    role: 'QA',
+    team: 'TA',
+    description: 'Testes automatizados são sua garantia de qualidade.',
+    fullDescription:
       'Vitor garante que cada funcionalidade funcione perfeitamente, como mecânico que testa trenó antes da grande viagem. Sua dedicação à qualidade é inspiradora.',
   },
   {
-    foto: '/collaborators/welerson.jpeg',
-    nome: 'Welerson Bugança',
-    funcao: 'Desenvolvedor',
-    time: 'eTorre',
-    descricao: 'Integração contínua é seu fluxo natalino.',
-    descricaoCompleta:
+    photo: '/collaborators/welerson.jpeg',
+    name: 'Welerson Bugança',
+    role: 'Desenvolvedor',
+    team: 'eTorre',
+    description: 'Integração contínua é seu fluxo natalino.',
+    fullDescription:
       'Welerson mantém pipeline de desenvolvimento fluindo suavemente como canção de Natal. Seus processos CI/CD são exemplares como coral afinado.',
   },
   {
-    foto: '/collaborators/magro.jpeg',
-    nome: 'Mateus Magro',
-    funcao: 'DevOps',
-    time: 'Arquitetura/DevOps',
-    descricao: 'Arquitetura escalável como fábrica de brinquedos.',
-    descricaoCompleta:
+    photo: '/collaborators/magro.jpeg',
+    name: 'Mateus Magro',
+    role: 'DevOps',
+    team: 'Arquitetura/DevOps',
+    description: 'Arquitetura escalável como fábrica de brinquedos.',
+    fullDescription:
       'Mateus Magro projeta sistemas que crescem harmoniosamente como árvore bem cuidada. Sua visão técnica prepara o terreno para futuras expansões.',
   },
   {
-    foto: '/collaborators/cleimar.jpeg',
-    nome: 'Cleimar Casagrande',
-    funcao: 'Gerente',
-    time: 'Gerente',
-    descricao: 'Resolve problemas mais rápido que trenó voador.',
-    descricaoCompleta:
+    photo: '/collaborators/cleimar.jpeg',
+    name: 'Cleimar Casagrande',
+    role: 'Gerente',
+    team: 'Gerente',
+    description: 'Resolve problemas mais rápido que trenó voador.',
+    fullDescription:
       'Veterano da equipe, Cleimar tem experiência suficiente para ensinar até o Papai Noel a otimizar rotas. Seu conhecimento técnico é lendário como as histórias de Natal.',
   },
   {
-    foto: '/collaborators/ariele.jpeg',
-    nome: 'Ariele Fernandes',
-    funcao: 'PO',
-    time: 'PEC',
-    descricao: 'Código limpo é seu presente de Natal favorito.',
-    descricaoCompleta:
+    photo: '/collaborators/ariele.jpeg',
+    name: 'Ariele Fernandes',
+    role: 'PO',
+    team: 'PEC',
+    description: 'Código limpo é seu presente de Natal favorito.',
+    fullDescription:
       'Com um olhar atento aos detalhes, Ariele garante que cada linha de código seja um presente bem embrulhado. Sua organização deixaria até os elfos do Papai Noel com inveja.',
   },
   {
-    foto: '/collaborators/bruna.jpeg',
-    nome: 'Bruna',
-    funcao: 'PO',
-    time: 'Siga Verd-e',
-    descricao: 'UX que encanta como decoração natalina.',
-    descricaoCompleta:
+    photo: '/collaborators/bruna.jpeg',
+    name: 'Bruna',
+    role: 'PO',
+    team: 'Siga Verd-e',
+    description: 'UX que encanta como decoração natalina.',
+    fullDescription:
       'Bruna cria experiências de usuário tão mágicas quanto a manhã de Natal. Cada interface projetada por ela é um presente de usabilidade perfeita.',
   },
   {
-    foto: '/collaborators/eleno.jpeg',
-    nome: 'Eleno',
-    funcao: 'PO',
-    time: 'eCentral',
-    descricao: 'Código elegante é sua especialidade natalina.',
-    descricaoCompleta:
+    photo: '/collaborators/eleno.jpeg',
+    name: 'Eleno',
+    role: 'PO',
+    team: 'eCentral',
+    description: 'Código elegante é sua especialidade natalina.',
+    fullDescription:
       'Eleno escreve código com a elegância de uma valsa de Natal. Suas soluções são tão bem elaboradas que parecem envolvidas em papel de presente dourado.',
   },
   {
-    foto: '/collaborators/luan.jpeg',
-    nome: 'Luan',
-    funcao: 'PO',
-    time: 'eTorre',
-    descricao: 'Explorador de tecnologias como viajante do Polo Norte.',
-    descricaoCompleta:
+    photo: '/collaborators/luan.jpeg',
+    name: 'Luan',
+    role: 'PO',
+    team: 'eTorre',
+    description: 'Explorador de tecnologias como viajante do Polo Norte.',
+    fullDescription:
       'Luan explora novas fronteiras tecnológicas com entusiasmo contagiante. Cada descoberta é compartilhada como presente precioso com a equipe.',
   },
   {
-    foto: '/collaborators/ygor.jpeg',
-    nome: 'Ygor',
-    funcao: 'PO',
-    time: 'ePonto',
-    descricao: 'Frontend moderno como vitrine de loja de Natal.',
-    descricaoCompleta:
+    photo: '/collaborators/ygor.jpeg',
+    name: 'Ygor',
+    role: 'PO',
+    team: 'ePonto',
+    description: 'Frontend moderno como vitrine de loja de Natal.',
+    fullDescription:
       'Ygor cria experiências visuais encantadoras que capturam espírito natalino. Cada componente é crafted com paixão e precisão técnica excepcional.',
   },
   {
-    foto: '/collaborators/adailton.jpeg',
-    nome: 'Adailton Teixeira',
-    funcao: 'QA',
-    time: 'QA',
-    descricao: 'Transforma café em código antes do Papai Noel acordar.',
-    descricaoCompleta:
+    photo: '/collaborators/adailton.jpeg',
+    name: 'Adailton Teixeira',
+    role: 'QA',
+    team: 'QA',
+    description: 'Transforma café em código antes do Papai Noel acordar.',
+    fullDescription:
       'Especialista em resolver bugs complexos enquanto toma seu terceiro café do dia. Sua dedicação é tão grande que até os renos do Papai Noel param para aplaudir.',
   },
   {
-    foto: '/collaborators/joana.jpeg',
-    nome: 'Joana Franciscon',
-    funcao: 'QA',
-    time: 'QA',
-    descricao: 'UX/UI que brilha como luzes de Natal.',
-    descricaoCompleta:
+    photo: '/collaborators/joana.jpeg',
+    name: 'Joana Franciscon',
+    role: 'QA',
+    team: 'QA',
+    description: 'UX/UI que brilha como luzes de Natal.',
+    fullDescription:
       'Joana cria interfaces tão intuitivas e bonitas quanto decorações natalinas premium. Cada pixel é posicionado com cuidado de quem arruma presentes sob a árvore.',
   },
   {
-    foto: '/collaborators/karine.jpeg',
-    nome: 'Karine Campos',
-    funcao: 'QA',
-    time: 'QA',
-    descricao: 'Qualidade de código como estrela guia.',
-    descricaoCompleta:
+    photo: '/collaborators/karine.jpeg',
+    name: 'Karine Campos',
+    role: 'QA',
+    team: 'QA',
+    description: 'Qualidade de código como estrela guia.',
+    fullDescription:
       'Karine mantém padrões elevados como estrela no topo da árvore. Seu comprometimento com excelência inspira toda a equipe a dar o melhor.',
   },
   {
-    foto: '/collaborators/taissa.jpeg',
-    nome: 'Taissa',
-    funcao: 'QA',
-    time: 'QA',
-    descricao: 'Design de código como arte natalina.',
-    descricaoCompleta:
+    photo: '/collaborators/taissa.jpeg',
+    name: 'Taissa',
+    role: 'QA',
+    team: 'QA',
+    description: 'Design de código como arte natalina.',
+    fullDescription:
       'Taissa transforma requisitos em código elegante com a maestria de artista decorando árvore. Cada função é uma obra de arte funcional.',
   },
   {
-    foto: '/collaborators/igor.jpeg',
-    nome: 'Igor Trentini',
-    funcao: 'Desenvolvedor',
-    time: 'PEC',
-    descricao: 'Lidera como Papai Noel lidera os elfos.',
-    descricaoCompleta:
+    photo: '/collaborators/igor.jpeg',
+    name: 'Igor Trentini',
+    role: 'Desenvolvedor',
+    team: 'PEC',
+    description: 'Lidera como Papai Noel lidera os elfos.',
+    fullDescription:
       'Igor guia a equipe com a sabedoria de quem conhece cada detalhe da oficina. Sua liderança técnica transforma desafios em conquistas memoráveis.',
   },
     {
-    foto: '/collaborators/ia_dieison.jpeg',
-    nome: 'IA Dieison',
-    funcao: 'Desenvolvedor',
-    time: 'IA',
-    descricao: 'Inteligência artificial com espírito natalino.',
-    descricaoCompleta:
+    photo: '/collaborators/ia_dieison.jpeg',
+    name: 'IA Dieison',
+    role: 'Desenvolvedor',
+    team: 'IA',
+    description: 'Inteligência artificial com espírito natalino.',
+    fullDescription:
       'IA Dieison processa dados com a eficiência de uma fábrica de brinquedos automatizada. Seu aprendizado contínuo é como a magia do Natal que nunca acaba.',
   },
   {
-    foto: '/collaborators/ia_nathan.jpeg',
-    nome: 'IA Nathan',
-    funcao: 'Desenvolvedor',
-    time: 'IA',
-    descricao: 'Machine learning mais rápido que trenó supersônico.',
-    descricaoCompleta:
+    photo: '/collaborators/ia_nathan.jpeg',
+    name: 'IA Nathan',
+    role: 'Desenvolvedor',
+    team: 'IA',
+    description: 'Machine learning mais rápido que trenó supersônico.',
+    fullDescription:
       'IA Nathan analisa padrões com precisão cirúrgica, como se estivesse organizando presentes por categoria. Sua capacidade de predição impressiona até os elfos mais experientes.',
   },
   {
-    foto: '/collaborators/ia_vinicius.jpeg',
-    nome: 'IA Vinícius',
-    funcao: 'Desenvolvedor',
-    time: 'IA',
-    descricao: 'Algoritmos inteligentes envoltos em papel de presente.',
-    descricaoCompleta:
+    photo: '/collaborators/ia_vinicius.jpeg',
+    name: 'IA Vinícius',
+    role: 'Desenvolvedor',
+    team: 'IA',
+    description: 'Algoritmos inteligentes envoltos em papel de presente.',
+    fullDescription:
       'IA Vinícius combina lógica computacional com criatividade humana. Suas soluções baseadas em IA são como presentes que se adaptam perfeitamente a cada necessidade.',
   },
 ]
