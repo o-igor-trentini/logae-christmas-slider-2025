@@ -269,6 +269,15 @@ const managers: Collaborator[] = [
     fullDescription:
       'Isaque supervisiona o desenvolvimento técnico garantindo qualidade e boas práticas. Como mestre experiente, orienta desenvolvedores e garante que entregas atendam os mais altos padrões, coordenando equipes como maestro rege orquestra perfeita.',
   },
+  {
+    photo: './collaborators/jonas.jpeg',
+    name: 'Jonas Giron',
+    role: 'Head (cabeçudo 💡)',
+    team: 'Logae',
+    description: 'Líder visionário que guia a empresa ao sucesso.',
+    fullDescription:
+      'Jonas lidera a Logae com visão estratégica e paixão pelo crescimento. Como capitão experiente que navega pela tempestade, inspira confiança em toda equipe, alinha objetivos de negócio com execução técnica e garante que todos remem juntos rumo aos mesmos horizontes ambiciosos.',
+  },
 ]
 
 // PO
@@ -391,6 +400,19 @@ const rpaAnalysts: Collaborator[] = [
   },
 ]
 
+// RH
+const hrAnalysts: Collaborator[] = [
+  {
+    photo: './collaborators/pablo.png',
+    name: 'Pablo Falcão',
+    role: 'RH',
+    team: 'RH',
+    description: 'Guardião da cultura e maestro do desenvolvimento humano.',
+    fullDescription:
+      'Pablo orquestra a harmonia organizacional como maestro rege sinfonia perfeita. Arquiteto da cultura empresarial, transforma talentos individuais em time coeso e inspirado. Cuida do bem-estar e crescimento de cada pessoa com dedicação de quem esculpe obras-primas, construindo ambiente onde todos prosperam e alcançam seu potencial máximo.',
+  },
+]
+
 // Constante exportada com todos os colaboradores unificados
 export const COLLABORATORS: Collaborator[] = [
   ...architects,
@@ -401,4 +423,5 @@ export const COLLABORATORS: Collaborator[] = [
   ...productOwners,
   ...qaAnalysts,
   ...rpaAnalysts,
+  ...hrAnalysts,
 ]
