@@ -73,6 +73,15 @@ const developers: Collaborator[] = [
       'Eduardo desenvolve aplicações completas do backend ao frontend, como construtor que ergue casa do alicerce ao telhado. Seu código é sólido e escalável como construções feitas para durar gerações.',
   },
   {
+    photo: './collaborators/elvis.png',
+    name: 'Elvis Farias',
+    role: 'Desenvolvedor',
+    team: 'Siga Verd-e',
+    description: 'Desenvolvedor dedicado que entrega soluções de qualidade.',
+    fullDescription:
+      'Elvis desenvolve funcionalidades com atenção aos detalhes e compromisso com qualidade. Seu código bem estruturado e suas entregas consistentes mantêm o projeto avançando como engrenagem essencial da máquina que nunca falha.',
+  },
+  {
     photo: './collaborators/eduardo-pilonetto.jpeg',
     name: 'Eduardo Pilonetto',
     role: 'Desenvolvedor',
