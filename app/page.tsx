@@ -110,7 +110,7 @@ export default function Home() {
               x: { type: 'spring', stiffness: 300, damping: 30 },
               opacity: { duration: 0.5 },
             }}
-            className='absolute inset-0 overflow-y-auto'
+            className='absolute inset-0'
           >
             {slide?.type === 'collaborator' ? (
               <CollaboratorSlide data={slide.data} />
