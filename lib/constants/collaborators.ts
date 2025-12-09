@@ -119,7 +119,7 @@ const developers: Collaborator[] = [
   },
   {
     photo: './collaborators/jucian.jpeg',
-    name: 'Jucian Decazena',
+    name: 'Jucian Decezare',
     role: 'Desenvolvedor',
     team: 'ePonto',
     description: 'Solucionador de problemas complexos de desenvolvimento.',
@@ -191,7 +191,7 @@ const developers: Collaborator[] = [
   },
   {
     photo: './collaborators/tarcisio.jpeg',
-    name: 'Tarcísio',
+    name: 'Tarcisio Scotta',
     role: 'Desenvolvedor',
     team: 'PEC',
     description: 'Desenvolvedor eficiente focado em entregas de valor.',
@@ -209,30 +209,30 @@ const developers: Collaborator[] = [
   },
   {
     photo: './collaborators/ia-dieison.jpeg',
-    name: 'IA Dieison',
+    name: 'Dieison',
     role: 'Desenvolvedor',
     team: 'IA',
     description: 'Desenvolvedor especializado em inteligência artificial.',
     fullDescription:
-      'IA Dieison implementa modelos de machine learning e IA em produção. Transforma algoritmos científicos em aplicações práticas que agregam valor real ao negócio como alquimista moderno.',
+      'Dieison implementa modelos de machine learning e IA em produção. Transforma algoritmos científicos em aplicações práticas que agregam valor real ao negócio como alquimista moderno.',
   },
   {
     photo: './collaborators/ia-nathan.jpeg',
-    name: 'IA Nathan',
+    name: 'Nathan',
     role: 'Desenvolvedor',
     team: 'IA',
     description: 'Expert em machine learning e análise preditiva.',
     fullDescription:
-      'IA Nathan treina modelos que preveem comportamentos e otimizam processos. Seus algoritmos aprendem com dados como estudante dedicado que se torna mestre em sua área.',
+      'Nathan treina modelos que preveem comportamentos e otimizam processos. Seus algoritmos aprendem com dados como estudante dedicado que se torna mestre em sua área.',
   },
   {
     photo: './collaborators/ia-vinicius.jpeg',
-    name: 'IA Vinícius',
+    name: 'Vinícius',
     role: 'Desenvolvedor',
     team: 'IA',
     description: 'Desenvolvedor focado em soluções inteligentes com IA.',
     fullDescription:
-      'IA Vinícius integra inteligência artificial em produtos existentes. Adiciona capacidades cognitivas a sistemas tradicionais como quem instala cérebro eletrônico em máquinas.',
+      'Vinícius integra inteligência artificial em produtos existentes. Adiciona capacidades cognitivas a sistemas tradicionais como quem instala cérebro eletrônico em máquinas.',
   },
 ]
 
