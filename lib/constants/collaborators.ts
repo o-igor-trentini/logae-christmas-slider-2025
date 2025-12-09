@@ -11,15 +11,6 @@ export interface Collaborator {
 // Arquitetos
 const architects: Collaborator[] = [
   {
-    photo: './collaborators/isaque.jpeg',
-    name: 'Isaque Klassmann',
-    role: 'Arquiteto',
-    team: 'Arquitetura/DevOps',
-    description: 'Arquiteto de soluções escaláveis e resilientes.',
-    fullDescription:
-      'Isaque projeta arquiteturas robustas como quem constrói castelos de gelo que nunca derretem. Suas decisões técnicas garantem sistemas que suportam o crescimento exponencial como uma árvore de Natal que cresce a cada ano.',
-  },
-  {
     photo: './collaborators/jefferson.jpeg',
     name: 'Jefferson Valcarenki',
     role: 'Arquiteto',
@@ -33,9 +24,9 @@ const architects: Collaborator[] = [
     name: 'Geferson Ludvig',
     role: 'Arquiteto',
     team: 'Arquitetura/DevOps',
-    description: 'Arquiteto DevOps que orquestra infraestruturas.',
+    description: 'Arquiteto que projeta sistemas escaláveis e resilientes.',
     fullDescription:
-      'Geferson une desenvolvimento e operações como quem amarra o laço perfeito em um presente. Suas pipelines automatizadas fazem o deploy fluir suavemente como trenó na neve fresca.',
+      'Geferson desenha arquiteturas robustas e escaláveis que crescem harmoniosamente. Suas decisões técnicas garantem sistemas confiáveis como alicerce sólido que suporta qualquer construção, preparando infraestrutura para futuro.',
   },
 ]
 
@@ -43,21 +34,21 @@ const architects: Collaborator[] = [
 const biAnalysts: Collaborator[] = [
   {
     photo: './collaborators/cris.jpeg',
-    name: 'Christian',
+    name: 'Christian Sbaraini',
     role: 'BI',
     team: 'BI',
     description: 'Analista de dados que transforma números em insights.',
     fullDescription:
-      'Cris extrai inteligência dos dados como quem desembrulha presentes: com cuidado e revelando surpresas valiosas. Seus dashboards iluminam decisões estratégicas como luzes de Natal.',
+      'Christian extrai inteligência dos dados como quem desembrulha presentes: com cuidado e revelando surpresas valiosas. Seus dashboards iluminam decisões estratégicas como luzes de Natal.',
   },
   {
     photo: './collaborators/douglas.jpeg',
     name: 'Douglas Fantin',
     role: 'BI',
     team: 'BI',
-    description: 'Especialista em Business Intelligence e ETL.',
+    description: 'Analista de dados que transforma informações em insights.',
     fullDescription:
-      'Douglas orquestra fluxos de dados complexos como maestro rege sinfonia natalina. Suas pipelines de ETL garantem que informações certas cheguem às pessoas certas no momento perfeito.',
+      'Douglas organiza e interpreta dados com atenção, revelando padrões úteis como quem desembrulha presentes: com cuidado e surpreendendo com achados valiosos. Seus relatórios ajudam o time a tomar decisões mais claras e seguras.',
   },
   {
     photo: './collaborators/wesley.jpeg',
@@ -79,7 +70,7 @@ const developers: Collaborator[] = [
     team: 'Siga Verd-e',
     description: 'Desenvolvedor full stack focado em soluções robustas.',
     fullDescription:
-      'Eduardo desenvolve aplicações completas do backend ao frontend, como construtor que erg ue casa do alicerce ao telhado. Seu código é sólido e escalável como construções feitas para durar gerações.',
+      'Eduardo desenvolve aplicações completas do backend ao frontend, como construtor que ergue casa do alicerce ao telhado. Seu código é sólido e escalável como construções feitas para durar gerações.',
   },
   {
     photo: './collaborators/eduardo-pilonetto.jpeg',
@@ -95,27 +86,27 @@ const developers: Collaborator[] = [
     name: 'Eraldo Freitag',
     role: 'Desenvolvedor',
     team: 'eTorre',
-    description: 'Desenvolvedor versátil em múltiplas tecnologias.',
+    description: 'Desenvolvedor aprendendo novas tecnologias.',
     fullDescription:
-      'Eraldo transita entre diferentes stacks tecnológicas com facilidade. Aprende novas linguagens e frameworks rapidamente, adaptando-se a qualquer desafio como chamáleão que muda cores perfeitamente.',
+      'Eraldo está sempre buscando aprender e crescer. Aplica o que aprende em seus projetos diários com dedicação e vontade de evoluir.',
   },
   {
     photo: './collaborators/gabriel.jpeg',
     name: 'Gabriel Stringhini',
     role: 'Desenvolvedor',
     team: '???',
-    description: 'Desenvolvedor full stack com conhecimento amplo.',
+    description: 'Especialista em integrações e projetos diversos.',
     fullDescription:
-      'Gabriel domina todo o ciclo de desenvolvimento, desde banco de dados até interface do usuário. Seu conhecimento abrangente permite resolver problemas em qualquer camada da aplicação como médico generalista.',
+      'Gabriel conecta sistemas através de múltiplas APIs e integrações complexas como maestro que harmoniza diferentes instrumentos. Versátil e adaptável, aceita qualquer desafio de projeto com confiança, entregando soluções funcionais independente da complexidade.',
   },
   {
     photo: './collaborators/guilherme.jpeg',
     name: 'Guilherme Borges',
     role: 'Desenvolvedor',
     team: 'eCentral',
-    description: 'Desenvolvedor criativo com foco em soluções inovadoras.',
+    description: 'Desenvolvedor aprendendo e evoluindo.',
     fullDescription:
-      'Guilherme pensa fora da caixa ao resolver problemas técnicos. Suas soluções criativas muitas vezes simplificam complexidades, como atalho engenhoso que economiza horas de trabalho.',
+      'Guilherme está em constante aprendizado, buscando entender cada aspecto do desenvolvimento. Com curiosidade e determinação, aplica conhecimentos adquiridos em suas tarefas diárias.',
   },
   {
     photo: './collaborators/hiuri.jpeg',
@@ -212,9 +203,9 @@ const developers: Collaborator[] = [
     name: 'Igor Trentini',
     role: 'Desenvolvedor',
     team: 'PEC',
-    description: 'Tech lead que desenvolve e orienta o time.',
+    description: 'Desenvolvedor full stack que resolve problemas complexos.',
     fullDescription:
-      'Igor combina desenvolvimento com liderança técnica. Codifica features complexas enquanto mentora desenvolvedores juniores, como mestre que ensina ofício enquanto trabalha na obra-prima.',
+      'Igor desenvolve soluções completas e robustas, dominando tanto frontend quanto backend com profundidade técnica. Resolve desafios complexos de arquitetura e performance como engenheiro que transforma ideias em sistemas funcionais e escaláveis.',
   },
   {
     photo: './collaborators/ia-dieison.jpeg',
@@ -264,10 +255,19 @@ const managers: Collaborator[] = [
     photo: './collaborators/cleimar.jpeg',
     name: 'Cleimar Casagrande',
     role: 'Gerente',
-    team: 'Gerente',
-    description: 'Líder que coordena times e estratégias.',
+    team: 'Desenvolvimento',
+    description: 'Gerente experiente que lidera com visão estratégica.',
     fullDescription:
-      'Cleimar gerencia projetos e pessoas com a sabedoria do Papai Noel coordenando elfos. Sua visão estratégica e habilidade de remover obstáculos mantêm todos os times produtivos e motivados durante todo o ano.',
+      'Cleimar coordena múltiplas equipes de desenvolvimento com maestria, equilibrando demandas técnicas e necessidades de negócio. Veterano da área, remove impedimentos e facilita comunicação entre times como dirigente experiente que conhece cada detalhe da operação.',
+  },
+  {
+    photo: './collaborators/isaque.jpeg',
+    name: 'Isaque Klassmann',
+    role: 'Supervisor',
+    team: 'Desenvolvimento',
+    description: 'Supervisor técnico que orienta e inspira o time.',
+    fullDescription:
+      'Isaque supervisiona o desenvolvimento técnico garantindo qualidade e boas práticas. Como mestre experiente, orienta desenvolvedores e garante que entregas atendam os mais altos padrões, coordenando equipes como maestro rege orquestra perfeita.',
   },
 ]
 
@@ -278,13 +278,13 @@ const productOwners: Collaborator[] = [
     name: 'Ariele Fernandes',
     role: 'PO',
     team: 'PEC',
-    description: 'Product Owner que traduz visão em valor.',
+    description: 'PO que traduz visão em valor.',
     fullDescription:
       'Ariele prioriza backlog como quem organiza lista de presentes por importância. Define o que construir e quando, garantindo que cada sprint entregue valor real aos usuários como presentes cuidadosamente escolhidos.',
   },
   {
     photo: './collaborators/bruna.jpeg',
-    name: 'Bruna',
+    name: 'Bruna Provinelli',
     role: 'PO',
     team: 'Siga Verd-e',
     description: 'PO especialista em experiência do usuário.',
@@ -296,7 +296,7 @@ const productOwners: Collaborator[] = [
     name: 'Eleno Miranda',
     role: 'PO',
     team: 'eCentral',
-    description: 'Product Owner focado em resultados de negócio.',
+    description: 'PO focado em resultados de negócio.',
     fullDescription:
       'Eleno alinha produto com objetivos estratégicos da empresa. Suas decisões baseadas em dados garantem que cada feature desenvolvida traga ROI positivo como investimento em presentes que realmente agradam.',
   },
@@ -314,7 +314,7 @@ const productOwners: Collaborator[] = [
     name: 'Ygor Preto',
     role: 'PO',
     team: 'ePonto',
-    description: 'Product Owner ágil e adaptativo.',
+    description: 'PO ágil e adaptativo.',
     fullDescription:
       'Ygor responde rapidamente a mudanças de mercado e feedback de usuários. Sua agilidade em repriorizar e pivotar mantém o produto sempre relevante como tendências de presentes da temporada.',
   },
