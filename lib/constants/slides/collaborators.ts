@@ -100,6 +100,15 @@ const developers: Collaborator[] = [
             'Eraldo está sempre buscando aprender e crescer. Aplica o que aprende em seus projetos diários com dedicação e vontade de evoluir.',
     },
     {
+        photo: './collaborators/darlan-somensi.png',
+        name: 'Darlan Somensi',
+        role: 'Desenvolvedor',
+        team: 'eTorre',
+        description: 'Desenvolvedor focado em soluções eficientes.',
+        fullDescription:
+            'Darlan desenvolve funcionalidades com atenção aos detalhes e busca constante por melhorias. Seu código limpo e bem estruturado contribui para a evolução contínua do produto.',
+    },
+    {
         photo: './collaborators/gabriel.jpeg',
         name: 'Gabriel Stringhini',
         role: 'Desenvolvedor',
