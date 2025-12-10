@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 
-import { AnimatedCounter } from '@/components/animated-counter';
+import { AnimatedCounter } from '@/components/ui/animated-counter';
 
 interface ContentRendererProps {
     content: string | number;

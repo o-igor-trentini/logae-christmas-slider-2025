@@ -2,8 +2,8 @@
 
 import { motion } from 'framer-motion';
 
-import { ContentRenderer } from '@/components/content-renderer';
-import type { StatisticSlide } from '@/lib/constants/statistics';
+import { ContentRenderer } from '@/components/ui/content-renderer';
+import type { StatisticSlide } from '@/lib/constants/slides/statistics';
 
 interface StatisticSlideComponentProps {
     data: StatisticSlide;

@@ -1,5 +1,5 @@
-import type { Collaborator } from '@/lib/constants/collaborators';
-import type { StatisticSlide } from '@/lib/constants/statistics';
+import type { Collaborator } from '@/lib/constants/slides/collaborators';
+import type { StatisticSlide } from '@/lib/constants/slides/statistics';
 
 // Enum para tipos de slides
 export enum SlideTypeEnum {

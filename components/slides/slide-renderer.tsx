@@ -1,10 +1,10 @@
 import type { ComponentType } from 'react';
 
-import { CollaboratorSlide } from '@/components/slides/collaborator-slide';
-import { DemandsSlide } from '@/components/slides/demands-slide';
-import { DeploysSlide } from '@/components/slides/deploys-slide';
-import { FirefightersSlide } from '@/components/slides/firefighters-slide';
-import { StatisticSlideComponent } from '@/components/slides/statistic-slide';
+import { CollaboratorSlide } from '@/components/slides/types/collaborator-slide';
+import { DemandsSlide } from '@/components/slides/types/demands-slide';
+import { DeploysSlide } from '@/components/slides/types/deploys-slide';
+import { FirefightersSlide } from '@/components/slides/types/firefighters-slide';
+import { StatisticSlideComponent } from '@/components/slides/types/statistic-slide';
 import { SlideTypeEnum, type SlideType } from '@/lib/types/slides';
 
 interface SlideRendererProps {

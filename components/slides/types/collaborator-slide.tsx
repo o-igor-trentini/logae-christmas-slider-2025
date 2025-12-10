@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 
-import type { Collaborator } from '@/lib/constants/collaborators';
+import type { Collaborator } from '@/lib/constants/slides/collaborators';
 
 interface CollaboratorSlideProps {
     data: Collaborator;
@@ -17,7 +17,7 @@ export function CollaboratorSlide({ data }: CollaboratorSlideProps) {
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.2, duration: 0.6 }}
-                    className='flex-1 flex justify-center flex-shrink-0'
+                    className='flex-1 flex justify-center shrink-0'
                 >
                     <motion.div
                         animate={{
@@ -47,7 +47,7 @@ export function CollaboratorSlide({ data }: CollaboratorSlideProps) {
                                 />
 
                                 {/* Efeito de brilho glossy */}
-                                <div className='absolute inset-0 rounded-[28px] bg-gradient-to-tr from-transparent via-white to-transparent opacity-20 pointer-events-none'></div>
+                                <div className='absolute inset-0 rounded-[28px] bg-linear-to-tr from-transparent via-white to-transparent opacity-20 pointer-events-none'></div>
 
                                 {/* Acentos de canto */}
                                 <div className='absolute top-4 right-4 w-12 h-12 border-t-2 border-r-2 border-(--logae-primary) opacity-50 rounded-tr-xl'></div>
@@ -62,7 +62,7 @@ export function CollaboratorSlide({ data }: CollaboratorSlideProps) {
                     initial={{ opacity: 0, x: 50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.3, duration: 0.6 }}
-                    className='flex-1 flex-shrink-0'
+                    className='flex-1 shrink-0'
                 >
                     {/* Badge */}
                     <motion.div

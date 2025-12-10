@@ -1,15 +1,10 @@
-import { COLLABORATORS } from '@/lib/constants/collaborators';
-import { STATISTICS_SLIDES } from '@/lib/constants/statistics';
+import { DEFAULT_SLIDE_CONFIG } from '@/lib/config/slides.config';
+import { COLLABORATORS } from '@/lib/constants/slides/collaborators';
+import { DEMANDS_DATA } from '@/lib/constants/slides/demands';
+import { DEPLOYS_DATA } from '@/lib/constants/slides/deploys';
+import { FIREFIGHTERS_DATA } from '@/lib/constants/slides/firefighters';
+import { STATISTICS_SLIDES } from '@/lib/constants/slides/statistics';
 import { SlideTypeEnum, type SlideType, type SlideGeneratorConfig, type SlidesInfo } from '@/lib/types/slides';
-
-const defaultConfig: SlideGeneratorConfig = {
-    collaboratorsPerStatistic: 2,
-    includeDeploys: true,
-    includeDemands: true,
-    includeFirefighters: true,
-    shuffleCollaborators: false,
-    shuffleStatistics: false,
-};
 
 /**
  * Embaralha um array usando o algoritmo Fisher-Yates
@@ -35,7 +30,7 @@ function shuffle<T>(array: T[]): T[] {
  * @returns Array com todos os slides na ordem configurada
  */
 export function generateSlides(config: Partial<SlideGeneratorConfig> = {}): SlideType[] {
-    const finalConfig = { ...defaultConfig, ...config };
+    const finalConfig = { ...DEFAULT_SLIDE_CONFIG, ...config };
     const slides: SlideType[] = [];
 
     // Prepara os dados
@@ -87,14 +82,7 @@ export function generateSlides(config: Partial<SlideGeneratorConfig> = {}): Slid
     if (finalConfig.includeDeploys) {
         slides.push({
             type: SlideTypeEnum.DEPLOYS,
-            data: {
-                title: 'Deploys',
-                subtitle: 'Sucessos desde 01/01/2025',
-                production: 1032,
-                staging: 2460,
-                develop: 2945,
-                others: 644,
-            },
+            data: DEPLOYS_DATA,
         });
     }
 
@@ -102,22 +90,7 @@ export function generateSlides(config: Partial<SlideGeneratorConfig> = {}): Slid
     if (finalConfig.includeDemands) {
         slides.push({
             type: SlideTypeEnum.DEMANDS,
-            data: {
-                title: 'Entregas',
-                subtitle: 'Durante todo 2025',
-                total: 6500,
-                news: 1200,
-                updates: {
-                    total: 347,
-                    products: [
-                        { name: 'ePonto', value: 118 },
-                        { name: 'eTorre', value: 95 },
-                        { name: 'eCentral', value: 62 },
-                        { name: 'PeC', value: 38 },
-                        { name: 'Siga Verd-e', value: 34 },
-                    ],
-                },
-            },
+            data: DEMANDS_DATA,
         });
     }
 
@@ -125,20 +98,7 @@ export function generateSlides(config: Partial<SlideGeneratorConfig> = {}): Slid
     if (finalConfig.includeFirefighters) {
         slides.push({
             type: SlideTypeEnum.FIREFIGHTERS,
-            data: {
-                title: 'Bombeiros especializados',
-                emoji: '🚒',
-                mainStat: '0',
-                mainStatLabel: 'incêndios na produção',
-                description:
-                    "Nosso time é como bombeiros altamente especializados. Quanto menos 'incêndios' (bugs e demandas urgentes) temos que apagar, mais eficiente é nossa operação.",
-                benefits: [
-                    'Deploy bem-sucedido = incêndio evitado',
-                    'Bug prevenido = economia de tempo',
-                    'Demanda urgente evitada = trabalho estratégico',
-                    'Estamos construindo uma cultura de qualidade',
-                ],
-            },
+            data: FIREFIGHTERS_DATA,
         });
     }
 

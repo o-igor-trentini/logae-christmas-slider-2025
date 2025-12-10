@@ -427,7 +427,7 @@ const hrAnalysts: Collaborator[] = [
         team: 'RH',
         description: 'Hackeia cultura, faz deploy de talentos e mantém o time atualizado.',
         fullDescription:
-            'A pessoa que hackeia a cultura da empresa, faz deploy de talentos incríveis e mantém o time sempre atualizado – sem deixar ninguém virar “bug humano”. Cuida de gente como um bom Dev cuida de código: revisando, desenvolvendo, refatorando e garantindo que todo mundo rode na melhor versão de si mesmo.',
+            'A pessoa que hackeia a cultura da empresa, faz deploy de talentos incríveis e mantém o time sempre atualizado – sem deixar ninguém virar "bug humano". Cuida de gente como um bom Dev cuida de código: revisando, desenvolvendo, refatorando e garantindo que todo mundo rode na melhor versão de si mesmo.',
     },
 ];
 
