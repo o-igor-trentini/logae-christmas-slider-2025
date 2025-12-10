@@ -4,8 +4,6 @@ import type { Metadata } from 'next';
 
 import { Geist, Geist_Mono } from 'next/font/google';
 
-import { Analytics } from '@vercel/analytics/next';
-
 import { SnowEffect } from '@/components/effects/snow-effect';
 import { ThemeProvider } from '@/components/theme-provider';
 
@@ -43,8 +41,7 @@ export default function RootLayout({
           <SnowEffect />
           <main className='min-h-screen'>{children}</main>
         </ThemeProvider>
-        <Analytics />
       </body>
     </html>
-  );
+);
 }
