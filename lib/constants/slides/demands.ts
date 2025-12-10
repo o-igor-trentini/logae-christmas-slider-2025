@@ -1,8 +1,8 @@
 import type { DemandsData } from '@/lib/types/slides';
 
 export const DEMANDS_DATA: DemandsData = {
-    title: 'Demandas Implementadas',
-    subtitle: 'Entregas de 2025',
+    title: 'Entregas',
+    subtitle: 'Durante todo 2025',
     total: 6500,
     news: 1200,
     updates: {
