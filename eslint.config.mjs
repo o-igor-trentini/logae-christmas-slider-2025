@@ -1,11 +1,24 @@
+import { fixupConfigRules, fixupPluginRules } from '@eslint/compat';
 import js from '@eslint/js';
+import { FlatCompat } from '@eslint/eslintrc';
 import typescriptEslint from '@typescript-eslint/eslint-plugin';
-import typescriptParser from '@typescript-eslint/parser';
+import tsParser from '@typescript-eslint/parser';
 import importPlugin from 'eslint-plugin-import';
+import prettier from 'eslint-plugin-prettier';
 import unusedImports from 'eslint-plugin-unused-imports';
+import globals from 'globals';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const compat = new FlatCompat({
+    baseDirectory: __dirname,
+    recommendedConfig: js.configs.recommended,
+    allConfig: js.configs.all,
+});
 
 export default [
-    js.configs.recommended,
     {
         ignores: [
             '**/node_modules/**',
@@ -18,34 +31,33 @@ export default [
             '**/*.config.mjs',
             '**/coverage/**',
             '**/next-env.d.ts',
+            '.prettierrc.cjs',
         ],
     },
+    ...fixupConfigRules(
+        compat.extends('eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'),
+    ),
     {
         files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
+        plugins: {
+            '@typescript-eslint': fixupPluginRules(typescriptEslint),
+            prettier: fixupPluginRules(prettier),
+            import: fixupPluginRules(importPlugin),
+            'unused-imports': unusedImports,
+        },
         languageOptions: {
-            parser: typescriptParser,
+            globals: {
+                ...globals.browser,
+                ...globals.node,
+            },
+            parser: tsParser,
+            ecmaVersion: 'latest',
+            sourceType: 'module',
             parserOptions: {
-                ecmaVersion: 'latest',
-                sourceType: 'module',
                 ecmaFeatures: {
                     jsx: true,
                 },
             },
-            globals: {
-                React: 'readonly',
-                JSX: 'readonly',
-                NodeJS: 'readonly',
-                console: 'readonly',
-                process: 'readonly',
-                window: 'readonly',
-                document: 'readonly',
-                navigator: 'readonly',
-            },
-        },
-        plugins: {
-            '@typescript-eslint': typescriptEslint,
-            import: importPlugin,
-            'unused-imports': unusedImports,
         },
         settings: {
             'import/resolver': {
@@ -57,9 +69,13 @@ export default [
             },
         },
         rules: {
+            // Prettier
+            'prettier/prettier': 'error',
+
             // TypeScript rules
             '@typescript-eslint/no-unused-vars': 'off', // Usar unused-imports ao invés
             '@typescript-eslint/no-explicit-any': 'warn',
+            '@typescript-eslint/explicit-module-boundary-types': 'off',
 
             // Unused imports
             'unused-imports/no-unused-imports': 'error',
@@ -123,6 +139,7 @@ export default [
             'import/no-unresolved': 'off', // TypeScript já valida
 
             // General rules
+            'no-else-return': 'error',
             'no-console': [
                 'warn',
                 {
@@ -133,6 +150,9 @@ export default [
             'no-var': 'error',
             'no-unused-vars': 'off', // Usar unused-imports ao invés
             'no-undef': 'off', // TypeScript já valida isso
+            'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 0, maxBOF: 0 }],
+            'no-trailing-spaces': 'error',
+            'eol-last': ['error', 'always'],
             quotes: [
                 'error',
                 'single',
