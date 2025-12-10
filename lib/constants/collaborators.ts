@@ -420,6 +420,15 @@ const hrAnalysts: Collaborator[] = [
         fullDescription:
             'Pablo orquestra a harmonia organizacional como maestro rege sinfonia perfeita. Arquiteto da cultura empresarial, transforma talentos individuais em time coeso e inspirado. Cuida do bem-estar e crescimento de cada pessoa com dedicação de quem esculpe obras-primas, construindo ambiente onde todos prosperam e alcançam seu potencial máximo.',
     },
+    {
+        photo: './collaborators/tatiana.png',
+        name: 'Tatiana Rossi',
+        role: 'Gerente',
+        team: 'RH',
+        description: 'Hackeia cultura, faz deploy de talentos e mantém o time atualizado.',
+        fullDescription:
+            'A pessoa que hackeia a cultura da empresa, faz deploy de talentos incríveis e mantém o time sempre atualizado – sem deixar ninguém virar “bug humano”. Cuida de gente como um bom Dev cuida de código: revisando, desenvolvendo, refatorando e garantindo que todo mundo rode na melhor versão de si mesmo.',
+    },
 ];
 
 // Constante exportada com todos os colaboradores unificados
