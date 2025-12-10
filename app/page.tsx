@@ -11,6 +11,7 @@ import { SlideControls } from '@/components/navigation/slide-controls';
 import { SlideNavigation } from '@/components/navigation/slide-navigation';
 import { AnimatedSlide } from '@/components/slides/animated-slide';
 import { useAutoPlay } from '@/hooks/use-auto-play';
+import { useControlsVisibility } from '@/hooks/use-controls-visibility';
 import { useKeyboardNavigation } from '@/hooks/use-keyboard-navigation';
 import { useSlideNavigation } from '@/hooks/use-slide-navigation';
 import { generateSlides } from '@/lib/utils/slide-generator';
@@ -22,8 +23,31 @@ export default function Home() {
     const { currentSlide, direction, isAutoPlay, goToSlide, goToNext, toggleAutoPlay, handleNext, handlePrevious } =
         useSlideNavigation({ totalSlides: ALL_SLIDES.length });
 
+    // Gerencia visibilidade dos controles
+    const { isVisible: showControls, showControls: showControlsTemporarily } = useControlsVisibility();
+
+    // Mostrar controles quando usar teclado
+    const handleKeyboardPrevious = () => {
+        showControlsTemporarily();
+        handlePrevious();
+    };
+
+    const handleKeyboardNext = () => {
+        showControlsTemporarily();
+        handleNext();
+    };
+
+    const handleKeyboardToggleAutoPlay = () => {
+        showControlsTemporarily();
+        toggleAutoPlay();
+    };
+
     useAutoPlay({ isEnabled: isAutoPlay, onNext: goToNext });
-    useKeyboardNavigation({ onPrevious: handlePrevious, onNext: handleNext, onToggleAutoPlay: toggleAutoPlay });
+    useKeyboardNavigation({
+        onPrevious: handleKeyboardPrevious,
+        onNext: handleKeyboardNext,
+        onToggleAutoPlay: handleKeyboardToggleAutoPlay,
+    });
 
     const slide = ALL_SLIDES[currentSlide];
 
@@ -32,7 +56,10 @@ export default function Home() {
             <EasterEggHandler />
             <FloatingEasterEggs />
 
-            <div className='relative w-full h-screen bg-black overflow-hidden'>
+            <div
+                className='relative w-full h-screen bg-black overflow-hidden'
+                style={{ cursor: showControls ? 'default' : 'none' }}
+            >
                 <BackgroundEffects />
 
                 {/* Slides container */}
@@ -45,9 +72,10 @@ export default function Home() {
                     currentSlide={currentSlide}
                     onSlideChange={goToSlide}
                     isAutoPlay={isAutoPlay}
+                    isVisible={showControls}
                 />
 
-                <SlideControls />
+                <SlideControls isVisible={showControls} />
             </div>
         </>
     );

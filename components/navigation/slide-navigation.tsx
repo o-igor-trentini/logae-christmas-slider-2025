@@ -7,13 +7,25 @@ interface SlideNavigationProps {
     currentSlide: number;
     onSlideChange: (index: number) => void;
     isAutoPlay: boolean;
+    isVisible: boolean;
 }
 
-export function SlideNavigation({ totalSlides, currentSlide, onSlideChange, isAutoPlay }: SlideNavigationProps) {
+export function SlideNavigation({
+    totalSlides,
+    currentSlide,
+    onSlideChange,
+    isAutoPlay,
+    isVisible,
+}: SlideNavigationProps) {
     return (
         <>
             {/* Navigation counter at bottom */}
-            <div className='absolute bottom-12 left-1/2 transform -translate-x-1/2 z-20'>
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+                transition={{ duration: 0.3 }}
+                className='absolute bottom-12 left-1/2 transform -translate-x-1/2 z-20'
+            >
                 <div className='flex items-center gap-4 bg-black/30 backdrop-blur-sm rounded-full px-6 py-3'>
                     <motion.button
                         whileHover={{ scale: 1.1 }}
@@ -65,14 +77,19 @@ export function SlideNavigation({ totalSlides, currentSlide, onSlideChange, isAu
                         </svg>
                     </motion.button>
                 </div>
-            </div>
+            </motion.div>
 
             {/* Auto-play indicator */}
             {isAutoPlay && (
-                <div className='absolute top-6 right-6 flex items-center gap-2 text-white/60 text-sm z-20'>
+                <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: isVisible ? 1 : 0, x: isVisible ? 0 : 20 }}
+                    transition={{ duration: 0.3 }}
+                    className='absolute top-6 right-6 flex items-center gap-2 text-white/60 text-sm z-20 pointer-events-none'
+                >
                     <div className='w-2 h-2 rounded-full bg-green-500 animate-pulse'></div>
                     Executando
-                </div>
+                </motion.div>
             )}
         </>
     );
