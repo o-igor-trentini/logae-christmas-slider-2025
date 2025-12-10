@@ -3,15 +3,7 @@
 import { motion } from 'framer-motion';
 
 import { AnimatedCounter } from '@/components/animated-counter';
-
-export interface DeploysData {
-    title: string;
-    subtitle: string;
-    production: number;
-    staging: number;
-    develop: number;
-    others: number;
-}
+import type { DeploysData } from '@/lib/types/slides';
 
 interface DeploysSlideProps {
     data: DeploysData;
@@ -31,7 +23,7 @@ export function DeploysSlide({ data }: DeploysSlideProps) {
         <div className='w-full h-screen flex items-center justify-center px-8'>
             <div className='relative w-full max-w-4xl'>
                 {/* Background glow */}
-                <div className='absolute inset-0 bg-gradient-to-br from-[#1CBA89]/20 via-[#064635]/10 to-transparent blur-3xl'></div>
+                <div className='absolute inset-0 bg-linear-to-br from-[#1CBA89]/20 via-[#064635]/10 to-transparent blur-3xl'></div>
 
                 {/* Main container */}
                 <div className='relative rounded-3xl overflow-hidden border-2 border-[#1CBA89]/30 backdrop-blur-xl bg-black/40'>
@@ -71,7 +63,7 @@ export function DeploysSlide({ data }: DeploysSlideProps) {
                                 initial={{ opacity: 0, x: -50 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: 0.5 + index * 0.1, duration: 0.5 }}
-                                className='flex items-center justify-between p-6 rounded-2xl bg-gradient-to-r from-white/5 to-white/[0.02] border border-white/10 hover:border-[#1CBA89]/30 transition-all duration-300'
+                                className='flex items-center justify-between p-6 rounded-2xl bg-linear-to-r from-white/5 to-white/2 border border-white/10 hover:border-[#1CBA89]/30 transition-all duration-300'
                             >
                                 <div className='flex items-center gap-4'>
                                     <motion.span
@@ -90,7 +82,7 @@ export function DeploysSlide({ data }: DeploysSlideProps) {
                                     <span className='text-2xl font-semibold text-white'>{env.name}</span>
                                 </div>
                                 <div
-                                    className={`text-5xl font-black bg-gradient-to-r ${env.color} bg-clip-text text-transparent`}
+                                    className={`text-5xl font-black bg-linear-to-r ${env.color} bg-clip-text text-transparent`}
                                 >
                                     <AnimatedCounter value={env.value} duration={2} />
                                 </div>
@@ -104,7 +96,7 @@ export function DeploysSlide({ data }: DeploysSlideProps) {
                             transition={{ delay: 0.9, duration: 0.5 }}
                             className='mt-8 pt-6 border-t-2 border-[#1CBA89]/30'
                         >
-                            <div className='flex items-center justify-between p-6 rounded-2xl bg-gradient-to-r from-[#1CBA89]/10 to-[#064635]/10 border-2 border-[#1CBA89]/50'>
+                            <div className='flex items-center justify-between p-6 rounded-2xl bg-linear-to-r from-[#1CBA89]/10 to-[#064635]/10 border-2 border-[#1CBA89]/50'>
                                 <div className='flex items-center gap-4'>
                                     <motion.span
                                         animate={{
@@ -121,7 +113,7 @@ export function DeploysSlide({ data }: DeploysSlideProps) {
                                     </motion.span>
                                     <span className='text-3xl font-bold text-white'>Total de Deploys</span>
                                 </div>
-                                <div className='text-6xl font-black bg-gradient-to-r from-[#1CBA89] via-white to-[#064635] bg-clip-text text-transparent'>
+                                <div className='text-6xl font-black bg-linear-to-r from-[#1CBA89] via-white to-[#064635] bg-clip-text text-transparent'>
                                     <AnimatedCounter value={total} duration={2.5} />
                                 </div>
                             </div>

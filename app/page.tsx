@@ -12,6 +12,7 @@ import { CollaboratorSlide } from '@/components/slides/collaborator-slide';
 import { DeploysSlide } from '@/components/slides/deploys-slide';
 import { FirefightersSlide } from '@/components/slides/firefighters-slide';
 import { StatisticSlideComponent } from '@/components/slides/statistic-slide';
+import { SlideTypeEnum } from '@/lib/types/slides';
 import { generateSlides } from '@/lib/utils/slide-generator';
 
 export default function Home() {
@@ -111,13 +112,13 @@ export default function Home() {
                         }}
                         className='absolute inset-0'
                     >
-                        {slide?.type === 'collaborator' ? (
+                        {slide?.type === SlideTypeEnum.COLLABORATOR ? (
                             <CollaboratorSlide data={slide.data} />
-                        ) : slide?.type === 'statistic' ? (
+                        ) : slide?.type === SlideTypeEnum.STATISTIC ? (
                             <StatisticSlideComponent data={slide.data} />
-                        ) : slide?.type === 'deploys' ? (
+                        ) : slide?.type === SlideTypeEnum.DEPLOYS ? (
                             <DeploysSlide data={slide.data} />
-                        ) : slide?.type === 'firefighters' ? (
+                        ) : slide?.type === SlideTypeEnum.FIREFIGHTERS ? (
                             <FirefightersSlide data={slide.data} />
                         ) : (
                             <div className='w-full min-h-screen flex items-center justify-center px-8'>
@@ -126,7 +127,7 @@ export default function Home() {
                                     <div className='absolute inset-0 bg-linear-to-br from-black/80 via-gray-950/85 to-black/80 backdrop-blur-sm'></div>
                                     <div className='relative z-10 flex flex-col items-center justify-center text-center p-12 md:p-20'>
                                         <motion.h2 className='text-6xl md:text-7xl font-bold mb-12 text-white'>
-                                            Slide Type Not Supported
+                                            Slide não suportado
                                         </motion.h2>
                                     </div>
                                 </div>
