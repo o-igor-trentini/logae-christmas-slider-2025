@@ -5,6 +5,7 @@ import { SlideTypeEnum, type SlideType, type SlideGeneratorConfig, type SlidesIn
 const defaultConfig: SlideGeneratorConfig = {
     collaboratorsPerStatistic: 2,
     includeDeploys: true,
+    includeDemands: true,
     includeFirefighters: true,
     shuffleCollaborators: false,
     shuffleStatistics: false,
@@ -97,6 +98,29 @@ export function generateSlides(config: Partial<SlideGeneratorConfig> = {}): Slid
         });
     }
 
+    // Adiciona slide de demandas
+    if (finalConfig.includeDemands) {
+        slides.push({
+            type: SlideTypeEnum.DEMANDS,
+            data: {
+                title: 'Entregas',
+                subtitle: 'Durante todo 2025',
+                total: 6500,
+                news: 1200,
+                updates: {
+                    total: 347,
+                    products: [
+                        { name: 'ePonto', value: 118 },
+                        { name: 'eTorre', value: 95 },
+                        { name: 'eCentral', value: 62 },
+                        { name: 'PeC', value: 38 },
+                        { name: 'Siga Verd-e', value: 34 },
+                    ],
+                },
+            },
+        });
+    }
+
     // Adiciona slide de bombeiros no final
     if (finalConfig.includeFirefighters) {
         slides.push({
@@ -128,6 +152,7 @@ export function getSlidesInfo(slides: SlideType[]): SlidesInfo {
     const collaboratorCount = slides.filter((s) => s.type === SlideTypeEnum.COLLABORATOR).length;
     const statisticCount = slides.filter((s) => s.type === SlideTypeEnum.STATISTIC).length;
     const deploysCount = slides.filter((s) => s.type === SlideTypeEnum.DEPLOYS).length;
+    const demandsCount = slides.filter((s) => s.type === SlideTypeEnum.DEMANDS).length;
     const firefightersCount = slides.filter((s) => s.type === SlideTypeEnum.FIREFIGHTERS).length;
 
     return {
@@ -135,6 +160,7 @@ export function getSlidesInfo(slides: SlideType[]): SlidesInfo {
         collaborators: collaboratorCount,
         statistics: statisticCount,
         deploys: deploysCount,
+        demands: demandsCount,
         firefighters: firefightersCount,
     };
 }

@@ -1,6 +1,7 @@
 import type { ComponentType } from 'react';
 
 import { CollaboratorSlide } from '@/components/slides/collaborator-slide';
+import { DemandsSlide } from '@/components/slides/demands-slide';
 import { DeploysSlide } from '@/components/slides/deploys-slide';
 import { FirefightersSlide } from '@/components/slides/firefighters-slide';
 import { StatisticSlideComponent } from '@/components/slides/statistic-slide';
@@ -15,6 +16,7 @@ const SLIDE_COMPONENTS: Record<SlideTypeEnum, ComponentType<{ data: unknown }>> 
     [SlideTypeEnum.COLLABORATOR]: CollaboratorSlide as ComponentType<{ data: unknown }>,
     [SlideTypeEnum.STATISTIC]: StatisticSlideComponent as ComponentType<{ data: unknown }>,
     [SlideTypeEnum.DEPLOYS]: DeploysSlide as ComponentType<{ data: unknown }>,
+    [SlideTypeEnum.DEMANDS]: DemandsSlide as ComponentType<{ data: unknown }>,
     [SlideTypeEnum.FIREFIGHTERS]: FirefightersSlide as ComponentType<{ data: unknown }>,
 };
 

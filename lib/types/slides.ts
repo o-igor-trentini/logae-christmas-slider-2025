@@ -6,6 +6,7 @@ export enum SlideTypeEnum {
     COLLABORATOR = 'collaborator',
     STATISTIC = 'statistic',
     DEPLOYS = 'deploys',
+    DEMANDS = 'demands',
     FIREFIGHTERS = 'firefighters',
 }
 
@@ -29,11 +30,27 @@ export interface FirefightersData {
     benefits: string[];
 }
 
+// Interface para dados de demandas
+export interface DemandsData {
+    title: string;
+    subtitle: string;
+    total: number;
+    news: number;
+    updates: {
+        total: number;
+        products: {
+            name: string;
+            value: number;
+        }[];
+    };
+}
+
 // Tipos para os slides
 export type SlideType =
     | { type: SlideTypeEnum.COLLABORATOR; data: Collaborator }
     | { type: SlideTypeEnum.STATISTIC; data: StatisticSlide }
     | { type: SlideTypeEnum.DEPLOYS; data: DeploysData }
+    | { type: SlideTypeEnum.DEMANDS; data: DemandsData }
     | { type: SlideTypeEnum.FIREFIGHTERS; data: FirefightersData };
 
 // Interface de configuração do gerador de slides
@@ -42,6 +59,8 @@ export interface SlideGeneratorConfig {
     collaboratorsPerStatistic: number;
     /** Se deve incluir o slide de deploys */
     includeDeploys: boolean;
+    /** Se deve incluir o slide de demandas */
+    includeDemands: boolean;
     /** Se deve incluir o slide de bombeiros no final */
     includeFirefighters: boolean;
     /** Se deve embaralhar os colaboradores */
@@ -56,5 +75,6 @@ export interface SlidesInfo {
     collaborators: number;
     statistics: number;
     deploys: number;
+    demands: number;
     firefighters: number;
 }
