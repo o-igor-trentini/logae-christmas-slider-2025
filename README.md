@@ -158,7 +158,7 @@ Edite `lib/constants/easter-eggs.ts`:
 { type: 'emoji', content: '🎄' }
 
 // Frase
-{ type: 'frase', content: 'Texto divertido!' }
+{ type: 'phrase', content: 'Texto divertido!' }
 
 // Imagem
 { type: 'image', content: './easter-eggs/imagem.png' }

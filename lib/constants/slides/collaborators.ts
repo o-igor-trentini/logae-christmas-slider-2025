@@ -1,4 +1,3 @@
-// Tipo para colaborador
 export interface Collaborator {
     photo: string;
     name: string;

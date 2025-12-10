@@ -14,12 +14,12 @@ interface SlideRendererProps {
 
 // Mapeamento de tipos de slides para seus respectivos componentes
 const SLIDE_COMPONENTS: Record<SlideTypeEnum, ComponentType<{ data: unknown }>> = {
-    [SlideTypeEnum.COLLABORATOR]: CollaboratorSlide as ComponentType<{ data: unknown }>,
-    [SlideTypeEnum.STATISTIC]: StatisticSlideComponent as ComponentType<{ data: unknown }>,
-    [SlideTypeEnum.DEPLOYS]: DeploysSlide as ComponentType<{ data: unknown }>,
-    [SlideTypeEnum.DEMANDS]: DemandsSlide as ComponentType<{ data: unknown }>,
-    [SlideTypeEnum.FIREFIGHTERS]: FirefightersSlide as ComponentType<{ data: unknown }>,
-    [SlideTypeEnum.VIDEO]: VideoSlide as ComponentType<{ data: unknown }>,
+    [SlideTypeEnum.Collaborator]: CollaboratorSlide as ComponentType<{ data: unknown }>,
+    [SlideTypeEnum.Statistic]: StatisticSlideComponent as ComponentType<{ data: unknown }>,
+    [SlideTypeEnum.Deploys]: DeploysSlide as ComponentType<{ data: unknown }>,
+    [SlideTypeEnum.Demands]: DemandsSlide as ComponentType<{ data: unknown }>,
+    [SlideTypeEnum.Firefighters]: FirefightersSlide as ComponentType<{ data: unknown }>,
+    [SlideTypeEnum.Video]: VideoSlide as ComponentType<{ data: unknown }>,
 };
 
 export function SlideRenderer({ slide }: SlideRendererProps) {

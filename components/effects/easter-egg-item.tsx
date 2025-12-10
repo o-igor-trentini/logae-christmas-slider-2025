@@ -6,6 +6,8 @@ import Image from 'next/image';
 
 import { motion } from 'framer-motion';
 
+import { EasterEggType } from '@/lib/constants/easter-eggs';
+
 interface FloatingEasterEgg {
     id: string;
     content: string;
@@ -50,11 +52,11 @@ export function EasterEggItem({ egg }: EasterEggItemProps) {
             }}
             className='fixed pointer-events-none'
         >
-            {egg.type === 'emoji' ? (
+            {egg.type === EasterEggType.Emoji ? (
                 <div className='text-6xl drop-shadow-lg filter blur-0 hover:drop-shadow-xl transition-all'>
                     {egg.content}
                 </div>
-            ) : egg.type === 'image' ? (
+            ) : egg.type === EasterEggType.Image ? (
                 <div className='relative w-40 h-40 drop-shadow-lg'>
                     <Image
                         src={egg.content || '/placeholder.svg'}

@@ -3,12 +3,12 @@ import type { StatisticSlide } from '@/lib/constants/slides/statistics';
 
 // Enum para tipos de slides
 export enum SlideTypeEnum {
-    COLLABORATOR = 'collaborator',
-    STATISTIC = 'statistic',
-    DEPLOYS = 'deploys',
-    DEMANDS = 'demands',
-    FIREFIGHTERS = 'firefighters',
-    VIDEO = 'video',
+    Collaborator = 'collaborator',
+    Statistic = 'statistic',
+    Deploys = 'deploys',
+    Demands = 'demands',
+    Firefighters = 'firefighters',
+    Video = 'video',
 }
 
 // Interface para dados de deploys
@@ -58,12 +58,12 @@ export interface VideoData {
 
 // Tipos para os slides
 export type SlideType =
-    | { type: SlideTypeEnum.COLLABORATOR; data: Collaborator }
-    | { type: SlideTypeEnum.STATISTIC; data: StatisticSlide }
-    | { type: SlideTypeEnum.DEPLOYS; data: DeploysData }
-    | { type: SlideTypeEnum.DEMANDS; data: DemandsData }
-    | { type: SlideTypeEnum.FIREFIGHTERS; data: FirefightersData }
-    | { type: SlideTypeEnum.VIDEO; data: VideoData };
+    | { type: SlideTypeEnum.Collaborator; data: Collaborator }
+    | { type: SlideTypeEnum.Statistic; data: StatisticSlide }
+    | { type: SlideTypeEnum.Deploys; data: DeploysData }
+    | { type: SlideTypeEnum.Demands; data: DemandsData }
+    | { type: SlideTypeEnum.Firefighters; data: FirefightersData }
+    | { type: SlideTypeEnum.Video; data: VideoData };
 
 // Interface de configuração do gerador de slides
 export interface SlideGeneratorConfig {

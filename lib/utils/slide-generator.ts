@@ -53,7 +53,7 @@ export function generateSlides(config: Partial<SlideGeneratorConfig> = {}): Slid
     collaborators.forEach((collaborator, index) => {
         // Adiciona o slide do colaborador
         slides.push({
-            type: SlideTypeEnum.COLLABORATOR,
+            type: SlideTypeEnum.Collaborator,
             data: collaborator,
         });
 
@@ -63,7 +63,7 @@ export function generateSlides(config: Partial<SlideGeneratorConfig> = {}): Slid
 
         if (shouldAddStatistic) {
             slides.push({
-                type: SlideTypeEnum.STATISTIC,
+                type: SlideTypeEnum.Statistic,
                 data: statistics[statisticIndex],
             });
             statisticIndex++;
@@ -73,7 +73,7 @@ export function generateSlides(config: Partial<SlideGeneratorConfig> = {}): Slid
     // Adiciona estatísticas restantes (se houver)
     while (statisticIndex < statistics.length) {
         slides.push({
-            type: SlideTypeEnum.STATISTIC,
+            type: SlideTypeEnum.Statistic,
             data: statistics[statisticIndex],
         });
         statisticIndex++;
@@ -82,7 +82,7 @@ export function generateSlides(config: Partial<SlideGeneratorConfig> = {}): Slid
     // Adiciona slide de deploys
     if (finalConfig.includeDeploys) {
         slides.push({
-            type: SlideTypeEnum.DEPLOYS,
+            type: SlideTypeEnum.Deploys,
             data: DEPLOYS_DATA,
         });
     }
@@ -90,7 +90,7 @@ export function generateSlides(config: Partial<SlideGeneratorConfig> = {}): Slid
     // Adiciona slide de demandas
     if (finalConfig.includeDemands) {
         slides.push({
-            type: SlideTypeEnum.DEMANDS,
+            type: SlideTypeEnum.Demands,
             data: DEMANDS_DATA,
         });
     }
@@ -99,7 +99,7 @@ export function generateSlides(config: Partial<SlideGeneratorConfig> = {}): Slid
     if (finalConfig.includeVideos) {
         VIDEO_SLIDES.forEach((video) => {
             slides.push({
-                type: SlideTypeEnum.VIDEO,
+                type: SlideTypeEnum.Video,
                 data: video,
             });
         });
@@ -108,7 +108,7 @@ export function generateSlides(config: Partial<SlideGeneratorConfig> = {}): Slid
     // Adiciona slide de bombeiros no final
     if (finalConfig.includeFirefighters) {
         slides.push({
-            type: SlideTypeEnum.FIREFIGHTERS,
+            type: SlideTypeEnum.Firefighters,
             data: FIREFIGHTERS_DATA,
         });
     }
@@ -120,12 +120,12 @@ export function generateSlides(config: Partial<SlideGeneratorConfig> = {}): Slid
  * Retorna informações sobre a composição dos slides
  */
 export function getSlidesInfo(slides: SlideType[]): SlidesInfo {
-    const collaboratorCount = slides.filter((s) => s.type === SlideTypeEnum.COLLABORATOR).length;
-    const statisticCount = slides.filter((s) => s.type === SlideTypeEnum.STATISTIC).length;
-    const deploysCount = slides.filter((s) => s.type === SlideTypeEnum.DEPLOYS).length;
-    const demandsCount = slides.filter((s) => s.type === SlideTypeEnum.DEMANDS).length;
-    const videosCount = slides.filter((s) => s.type === SlideTypeEnum.VIDEO).length;
-    const firefightersCount = slides.filter((s) => s.type === SlideTypeEnum.FIREFIGHTERS).length;
+    const collaboratorCount = slides.filter((s) => s.type === SlideTypeEnum.Collaborator).length;
+    const statisticCount = slides.filter((s) => s.type === SlideTypeEnum.Statistic).length;
+    const deploysCount = slides.filter((s) => s.type === SlideTypeEnum.Deploys).length;
+    const demandsCount = slides.filter((s) => s.type === SlideTypeEnum.Demands).length;
+    const videosCount = slides.filter((s) => s.type === SlideTypeEnum.Video).length;
+    const firefightersCount = slides.filter((s) => s.type === SlideTypeEnum.Firefighters).length;
 
     return {
         total: slides.length,
