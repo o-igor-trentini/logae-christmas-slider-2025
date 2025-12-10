@@ -16,6 +16,8 @@ export const EASTER_EGGS = [
     { type: 'frase', content: 'Status: Merry' },
     { type: 'frase', content: 'Access violation 0x00000001' },
     { type: 'frase', content: 'Reiniciando integradores...' },
+    { type: 'frase', content: 'Vou acessar o 51' },
+    { type: 'frase', content: 'Feliz aniversário, paga o lanche!' },
     { type: 'frase', content: 'Chama o Gabriel que ele resolve!' },
     { type: 'frase', content: 'dps que o cara mata o cara o cara fica como errado' },
     { type: 'frase', content: 'prefere uma caganera ou o sistema funcionando?' },
