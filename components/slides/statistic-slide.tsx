@@ -16,7 +16,7 @@ export function StatisticSlideComponent({ data }: StatisticSlideComponentProps) 
             <div className='relative w-full max-w-3xl rounded-3xl overflow-hidden'>
                 <div className='absolute inset-0 bg-linear-to-br from-black/80 via-gray-950/85 to-black/80 backdrop-blur-sm'></div>
 
-                <div className='absolute inset-0 rounded-3xl bg-linear-to-r from-[#1CBA89]/30 via-transparent to-[#064635]/30 pointer-events-none'></div>
+                <div className='absolute inset-0 rounded-3xl bg-linear-to-r from-(--logae-primary)/30 via-transparent to-(--logae-secondary)/30 pointer-events-none'></div>
 
                 {/* Main content */}
                 <div className='relative z-10 flex flex-col items-center justify-center text-center p-12'>
@@ -69,7 +69,7 @@ export function StatisticSlideComponent({ data }: StatisticSlideComponentProps) 
                         initial={{ scaleX: 0 }}
                         animate={{ scaleX: 1 }}
                         transition={{ delay: 0.45, duration: 0.6 }}
-                        className='h-1 w-32 mx-auto mb-6 bg-linear-to-r from-[#064635] via-[#1CBA89] to-[#064635] rounded-full'
+                        className='h-1 w-32 mx-auto mb-6 bg-linear-to-r from-(--logae-secondary) via-(--logae-primary) to-(--logae-secondary) rounded-full'
                     ></motion.div>
 
                     {/* Description */}

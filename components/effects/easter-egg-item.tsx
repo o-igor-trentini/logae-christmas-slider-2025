@@ -65,7 +65,7 @@ export function EasterEggItem({ egg }: EasterEggItemProps) {
                     />
                 </div>
             ) : (
-                <div className='px-4 py-2 bg-linear-to-r from-[#1CBA89]/40 to-[#064635]/40 rounded-full backdrop-blur-sm border border-[#1CBA89]/50 whitespace-nowrap'>
+                <div className='px-4 py-2 bg-linear-to-r from-(--logae-primary)/40 to-(--logae-secondary)/40 rounded-full backdrop-blur-sm border border-(--logae-primary)/50 whitespace-nowrap'>
                     <span className='text-white font-bold text-lg drop-shadow-lg'>{egg.content}</span>
                 </div>
             )}

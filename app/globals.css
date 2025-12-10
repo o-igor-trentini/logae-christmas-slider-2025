@@ -4,9 +4,9 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-    /* Logae brand colors with Christmas theme */
-    --logae-dark: #064635;
-    --logae-teal: #1cba89;
+    /* Logae brand colors */
+    --logae-primary: #1cba89;
+    --logae-secondary: #064635;
 
     --background: oklch(0.98 0 0);
     --foreground: oklch(0.15 0 0);
@@ -14,33 +14,33 @@
     --card-foreground: oklch(0.15 0 0);
     --popover: oklch(1 0 0);
     --popover-foreground: oklch(0.15 0 0);
-    --primary: #064635;
+    --primary: var(--logae-secondary);
     --primary-foreground: oklch(1 0 0);
-    --secondary: #1cba89;
+    --secondary: var(--logae-primary);
     --secondary-foreground: oklch(0.15 0 0);
     --muted: oklch(0.92 0 0);
     --muted-foreground: oklch(0.56 0 0);
-    --accent: #1cba89;
+    --accent: var(--logae-primary);
     --accent-foreground: oklch(1 0 0);
     --destructive: oklch(0.577 0.245 27.325);
     --destructive-foreground: oklch(0.577 0.245 27.325);
     --border: oklch(0.92 0 0);
     --input: oklch(0.92 0 0);
-    --ring: #1cba89;
-    --chart-1: #064635;
-    --chart-2: #1cba89;
+    --ring: var(--logae-primary);
+    --chart-1: var(--logae-secondary);
+    --chart-2: var(--logae-primary);
     --chart-3: oklch(0.78 0.28 55);
     --chart-4: oklch(0.828 0.189 84.429);
     --chart-5: oklch(0.769 0.188 70.08);
     --radius: 0.625rem;
     --sidebar: oklch(0.985 0 0);
     --sidebar-foreground: oklch(0.145 0 0);
-    --sidebar-primary: #064635;
+    --sidebar-primary: var(--logae-secondary);
     --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: #1cba89;
+    --sidebar-accent: var(--logae-primary);
     --sidebar-accent-foreground: oklch(1 0 0);
     --sidebar-border: oklch(0.922 0 0);
-    --sidebar-ring: #1cba89;
+    --sidebar-ring: var(--logae-primary);
 }
 
 .dark {
@@ -50,32 +50,32 @@
     --card-foreground: oklch(0.95 0 0);
     --popover: oklch(0.18 0 0);
     --popover-foreground: oklch(0.95 0 0);
-    --primary: #1cba89;
-    --primary-foreground: #064635;
-    --secondary: #1cba89;
+    --primary: var(--logae-primary);
+    --primary-foreground: var(--logae-secondary);
+    --secondary: var(--logae-primary);
     --secondary-foreground: oklch(0.12 0 0);
     --muted: oklch(0.3 0 0);
     --muted-foreground: oklch(0.7 0 0);
-    --accent: #1cba89;
-    --accent-foreground: #064635;
+    --accent: var(--logae-primary);
+    --accent-foreground: var(--logae-secondary);
     --destructive: oklch(0.396 0.141 25.723);
     --destructive-foreground: oklch(0.637 0.237 25.331);
     --border: oklch(0.27 0 0);
     --input: oklch(0.27 0 0);
-    --ring: #1cba89;
-    --chart-1: #1cba89;
-    --chart-2: #064635;
+    --ring: var(--logae-primary);
+    --chart-1: var(--logae-primary);
+    --chart-2: var(--logae-secondary);
     --chart-3: oklch(0.88 0.28 55);
     --chart-4: oklch(0.627 0.265 303.9);
     --chart-5: oklch(0.645 0.246 16.439);
     --sidebar: oklch(0.205 0 0);
     --sidebar-foreground: oklch(0.985 0 0);
-    --sidebar-primary: #1cba89;
-    --sidebar-primary-foreground: #064635;
-    --sidebar-accent: #1cba89;
-    --sidebar-accent-foreground: #064635;
+    --sidebar-primary: var(--logae-primary);
+    --sidebar-primary-foreground: var(--logae-secondary);
+    --sidebar-accent: var(--logae-primary);
+    --sidebar-accent-foreground: var(--logae-secondary);
     --sidebar-border: oklch(0.269 0 0);
-    --sidebar-ring: #1cba89;
+    --sidebar-ring: var(--logae-primary);
 }
 
 @theme inline {
@@ -311,7 +311,7 @@
 }
 
 .shimmer-effect {
-    background: linear-gradient(90deg, transparent 0%, rgba(28, 186, 137, 0.3) 50%, transparent 100%);
+    background: linear-gradient(90deg, transparent 0%, color-mix(in srgb, var(--logae-primary) 30%, transparent) 50%, transparent 100%);
     background-size: 1000px 100%;
     animation: shimmer 3s infinite;
 }

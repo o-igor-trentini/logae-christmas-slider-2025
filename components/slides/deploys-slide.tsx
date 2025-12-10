@@ -23,12 +23,12 @@ export function DeploysSlide({ data }: DeploysSlideProps) {
         <div className='w-full h-screen flex items-center justify-center px-8'>
             <div className='relative w-full max-w-4xl'>
                 {/* Background glow */}
-                <div className='absolute inset-0 bg-linear-to-br from-[#1CBA89]/20 via-[#064635]/10 to-transparent blur-3xl'></div>
+                <div className='absolute inset-0 bg-linear-to-br from-(--logae-primary)/20 via-(--logae-secondary)/10 to-transparent blur-3xl'></div>
 
                 {/* Main container */}
-                <div className='relative rounded-3xl overflow-hidden border-2 border-[#1CBA89]/30 backdrop-blur-xl bg-black/40'>
+                <div className='relative rounded-3xl overflow-hidden border-2 border-(--logae-primary)/30 backdrop-blur-xl bg-black/40'>
                     {/* Header */}
-                    <div className='text-center py-8 px-6 border-b border-[#1CBA89]/20'>
+                    <div className='text-center py-8 px-6 border-b border-(--logae-primary)/20'>
                         <motion.div
                             initial={{ opacity: 0, y: -20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -49,7 +49,7 @@ export function DeploysSlide({ data }: DeploysSlideProps) {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.4, duration: 0.5 }}
-                            className='text-xl text-[#1CBA89] font-semibold'
+                            className='text-xl text-(--logae-primary) font-semibold'
                         >
                             {data.subtitle}
                         </motion.p>
@@ -63,7 +63,7 @@ export function DeploysSlide({ data }: DeploysSlideProps) {
                                 initial={{ opacity: 0, x: -50 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: 0.5 + index * 0.1, duration: 0.5 }}
-                                className='flex items-center justify-between p-6 rounded-2xl bg-linear-to-r from-white/5 to-white/2 border border-white/10 hover:border-[#1CBA89]/30 transition-all duration-300'
+                                className='flex items-center justify-between p-6 rounded-2xl bg-linear-to-r from-white/5 to-white/2 border border-white/10 hover:border-(--logae-primary)/30 transition-all duration-300'
                             >
                                 <div className='flex items-center gap-4'>
                                     <motion.span
@@ -94,9 +94,9 @@ export function DeploysSlide({ data }: DeploysSlideProps) {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.9, duration: 0.5 }}
-                            className='mt-8 pt-6 border-t-2 border-[#1CBA89]/30'
+                            className='mt-8 pt-6 border-t-2 border-(--logae-primary)/30'
                         >
-                            <div className='flex items-center justify-between p-6 rounded-2xl bg-linear-to-r from-[#1CBA89]/10 to-[#064635]/10 border-2 border-[#1CBA89]/50'>
+                            <div className='flex items-center justify-between p-6 rounded-2xl bg-linear-to-r from-(--logae-primary)/10 to-(--logae-secondary)/10 border-2 border-(--logae-primary)/50'>
                                 <div className='flex items-center gap-4'>
                                     <motion.span
                                         animate={{
@@ -113,7 +113,7 @@ export function DeploysSlide({ data }: DeploysSlideProps) {
                                     </motion.span>
                                     <span className='text-3xl font-bold text-white'>Total de Deploys</span>
                                 </div>
-                                <div className='text-6xl font-black bg-linear-to-r from-[#1CBA89] via-white to-[#064635] bg-clip-text text-transparent'>
+                                <div className='text-6xl font-black bg-linear-to-r from-(--logae-primary) via-white to-(--logae-secondary) bg-clip-text text-transparent'>
                                     <AnimatedCounter value={total} duration={2.5} />
                                 </div>
                             </div>
@@ -121,8 +121,8 @@ export function DeploysSlide({ data }: DeploysSlideProps) {
                     </div>
 
                     {/* Decorative corner accents */}
-                    <div className='absolute top-4 right-4 w-16 h-16 border-t-2 border-r-2 border-[#1CBA89]/30 rounded-tr-2xl'></div>
-                    <div className='absolute bottom-4 left-4 w-16 h-16 border-b-2 border-l-2 border-[#1CBA89]/30 rounded-bl-2xl'></div>
+                    <div className='absolute top-4 right-4 w-16 h-16 border-t-2 border-r-2 border-(--logae-primary)/30 rounded-tr-2xl'></div>
+                    <div className='absolute bottom-4 left-4 w-16 h-16 border-b-2 border-l-2 border-(--logae-primary)/30 rounded-bl-2xl'></div>
                 </div>
             </div>
         </div>
