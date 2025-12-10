@@ -5,7 +5,17 @@ import { STATISTICS_SLIDES, type StatisticSlide } from '@/lib/constants/statisti
 export type SlideType =
     | { type: 'collaborator'; data: Collaborator }
     | { type: 'statistic'; data: StatisticSlide }
+    | { type: 'deploys'; data: DeploysData }
     | { type: 'firefighters'; data: FirefightersData };
+
+export interface DeploysData {
+    title: string;
+    subtitle: string;
+    production: number;
+    staging: number;
+    develop: number;
+    others: number;
+}
 
 export interface FirefightersData {
     title: string;
@@ -19,6 +29,8 @@ export interface FirefightersData {
 interface SlideGeneratorConfig {
     /** Quantos slides de colaboradores antes de inserir uma estatística */
     collaboratorsPerStatistic: number;
+    /** Se deve incluir o slide de deploys */
+    includeDeploys: boolean;
     /** Se deve incluir o slide de bombeiros no final */
     includeFirefighters: boolean;
     /** Se deve embaralhar os colaboradores */
@@ -29,6 +41,7 @@ interface SlideGeneratorConfig {
 
 const defaultConfig: SlideGeneratorConfig = {
     collaboratorsPerStatistic: 2,
+    includeDeploys: true,
     includeFirefighters: true,
     shuffleCollaborators: false,
     shuffleStatistics: false,
@@ -106,6 +119,21 @@ export function generateSlides(config: Partial<SlideGeneratorConfig> = {}): Slid
         statisticIndex++;
     }
 
+    // Adiciona slide de deploys
+    if (finalConfig.includeDeploys) {
+        slides.push({
+            type: 'deploys',
+            data: {
+                title: 'Deploys',
+                subtitle: 'Sucessos desde 01/01/2025',
+                production: 1032,
+                staging: 2460,
+                develop: 2945,
+                others: 644,
+            },
+        });
+    }
+
     // Adiciona slide de bombeiros no final
     if (finalConfig.includeFirefighters) {
         slides.push({
@@ -136,12 +164,14 @@ export function generateSlides(config: Partial<SlideGeneratorConfig> = {}): Slid
 export function getSlidesInfo(slides: SlideType[]) {
     const collaboratorCount = slides.filter((s) => s.type === 'collaborator').length;
     const statisticCount = slides.filter((s) => s.type === 'statistic').length;
+    const deploysCount = slides.filter((s) => s.type === 'deploys').length;
     const firefightersCount = slides.filter((s) => s.type === 'firefighters').length;
 
     return {
         total: slides.length,
         collaborators: collaboratorCount,
         statistics: statisticCount,
+        deploys: deploysCount,
         firefighters: firefightersCount,
     };
 }

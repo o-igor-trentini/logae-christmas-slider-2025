@@ -9,6 +9,7 @@ import { FloatingEasterEggs } from '@/components/effects/floating-easter-eggs';
 import { SlideControls } from '@/components/navigation/slide-controls';
 import { SlideNavigation } from '@/components/navigation/slide-navigation';
 import { CollaboratorSlide } from '@/components/slides/collaborator-slide';
+import { DeploysSlide } from '@/components/slides/deploys-slide';
 import { FirefightersSlide } from '@/components/slides/firefighters-slide';
 import { StatisticSlideComponent } from '@/components/slides/statistic-slide';
 import { generateSlides } from '@/lib/utils/slide-generator';
@@ -114,6 +115,8 @@ export default function Home() {
                             <CollaboratorSlide data={slide.data} />
                         ) : slide?.type === 'statistic' ? (
                             <StatisticSlideComponent data={slide.data} />
+                        ) : slide?.type === 'deploys' ? (
+                            <DeploysSlide data={slide.data} />
                         ) : slide?.type === 'firefighters' ? (
                             <FirefightersSlide data={slide.data} />
                         ) : (
