@@ -5,6 +5,7 @@ import { DemandsSlide } from '@/components/slides/types/demands-slide';
 import { DeploysSlide } from '@/components/slides/types/deploys-slide';
 import { FirefightersSlide } from '@/components/slides/types/firefighters-slide';
 import { StatisticSlideComponent } from '@/components/slides/types/statistic-slide';
+import { VideoSlide } from '@/components/slides/types/video-slide';
 import { SlideTypeEnum, type SlideType } from '@/lib/types/slides';
 
 interface SlideRendererProps {
@@ -18,6 +19,7 @@ const SLIDE_COMPONENTS: Record<SlideTypeEnum, ComponentType<{ data: unknown }>> 
     [SlideTypeEnum.DEPLOYS]: DeploysSlide as ComponentType<{ data: unknown }>,
     [SlideTypeEnum.DEMANDS]: DemandsSlide as ComponentType<{ data: unknown }>,
     [SlideTypeEnum.FIREFIGHTERS]: FirefightersSlide as ComponentType<{ data: unknown }>,
+    [SlideTypeEnum.VIDEO]: VideoSlide as ComponentType<{ data: unknown }>,
 };
 
 export function SlideRenderer({ slide }: SlideRendererProps) {

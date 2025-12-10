@@ -8,6 +8,7 @@ export enum SlideTypeEnum {
     DEPLOYS = 'deploys',
     DEMANDS = 'demands',
     FIREFIGHTERS = 'firefighters',
+    VIDEO = 'video',
 }
 
 // Interface para dados de deploys
@@ -45,13 +46,24 @@ export interface DemandsData {
     };
 }
 
+// Interface para dados de vídeo
+export interface VideoData {
+    title: string;
+    subtitle?: string;
+    videoSrc: string;
+    autoPlay?: boolean;
+    loop?: boolean;
+    muted?: boolean;
+}
+
 // Tipos para os slides
 export type SlideType =
     | { type: SlideTypeEnum.COLLABORATOR; data: Collaborator }
     | { type: SlideTypeEnum.STATISTIC; data: StatisticSlide }
     | { type: SlideTypeEnum.DEPLOYS; data: DeploysData }
     | { type: SlideTypeEnum.DEMANDS; data: DemandsData }
-    | { type: SlideTypeEnum.FIREFIGHTERS; data: FirefightersData };
+    | { type: SlideTypeEnum.FIREFIGHTERS; data: FirefightersData }
+    | { type: SlideTypeEnum.VIDEO; data: VideoData };
 
 // Interface de configuração do gerador de slides
 export interface SlideGeneratorConfig {
@@ -61,6 +73,8 @@ export interface SlideGeneratorConfig {
     includeDeploys: boolean;
     /** Se deve incluir o slide de demandas */
     includeDemands: boolean;
+    /** Se deve incluir slides de vídeo */
+    includeVideos: boolean;
     /** Se deve incluir o slide de bombeiros no final */
     includeFirefighters: boolean;
     /** Se deve embaralhar os colaboradores */
@@ -76,5 +90,6 @@ export interface SlidesInfo {
     statistics: number;
     deploys: number;
     demands: number;
+    videos: number;
     firefighters: number;
 }

@@ -10,6 +10,8 @@ export const DEFAULT_SLIDE_CONFIG: SlideGeneratorConfig = {
     includeDeploys: true,
     /** Se deve incluir o slide de demandas */
     includeDemands: true,
+    /** Se deve incluir slides de vídeo */
+    includeVideos: true,
     /** Se deve incluir o slide de bombeiros no final */
     includeFirefighters: true,
     /** Se deve embaralhar os colaboradores */

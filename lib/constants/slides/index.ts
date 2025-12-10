@@ -5,3 +5,4 @@ export { DEPLOYS_DATA } from './deploys';
 export { FIREFIGHTERS_DATA } from './firefighters';
 export { STATISTICS_SLIDES } from './statistics';
 export type { StatisticSlide } from './statistics';
+export { VIDEO_SLIDES } from './videos';

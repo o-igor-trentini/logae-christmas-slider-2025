@@ -4,6 +4,7 @@ import { DEMANDS_DATA } from '@/lib/constants/slides/demands';
 import { DEPLOYS_DATA } from '@/lib/constants/slides/deploys';
 import { FIREFIGHTERS_DATA } from '@/lib/constants/slides/firefighters';
 import { STATISTICS_SLIDES } from '@/lib/constants/slides/statistics';
+import { VIDEO_SLIDES } from '@/lib/constants/slides/videos';
 import { SlideTypeEnum, type SlideType, type SlideGeneratorConfig, type SlidesInfo } from '@/lib/types/slides';
 
 /**
@@ -94,6 +95,16 @@ export function generateSlides(config: Partial<SlideGeneratorConfig> = {}): Slid
         });
     }
 
+    // Adiciona slides de vídeo
+    if (finalConfig.includeVideos) {
+        VIDEO_SLIDES.forEach((video) => {
+            slides.push({
+                type: SlideTypeEnum.VIDEO,
+                data: video,
+            });
+        });
+    }
+
     // Adiciona slide de bombeiros no final
     if (finalConfig.includeFirefighters) {
         slides.push({
@@ -113,6 +124,7 @@ export function getSlidesInfo(slides: SlideType[]): SlidesInfo {
     const statisticCount = slides.filter((s) => s.type === SlideTypeEnum.STATISTIC).length;
     const deploysCount = slides.filter((s) => s.type === SlideTypeEnum.DEPLOYS).length;
     const demandsCount = slides.filter((s) => s.type === SlideTypeEnum.DEMANDS).length;
+    const videosCount = slides.filter((s) => s.type === SlideTypeEnum.VIDEO).length;
     const firefightersCount = slides.filter((s) => s.type === SlideTypeEnum.FIREFIGHTERS).length;
 
     return {
@@ -121,6 +133,7 @@ export function getSlidesInfo(slides: SlideType[]): SlidesInfo {
         statistics: statisticCount,
         deploys: deploysCount,
         demands: demandsCount,
+        videos: videosCount,
         firefighters: firefightersCount,
     };
 }
