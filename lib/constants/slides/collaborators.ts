@@ -289,7 +289,7 @@ const managers: Collaborator[] = [
     {
         photo: './collaborators/jonas.jpeg',
         name: 'Jonas Giron',
-        role: 'Head (cabeçudo 💡)',
+        role: 'Head (O Cabeça 💡)',
         team: 'Logae',
         description: 'Líder visionário que guia a empresa ao sucesso.',
         fullDescription:
