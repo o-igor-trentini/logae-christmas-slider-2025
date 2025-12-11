@@ -2,6 +2,7 @@
 
 import { motion, type Variants } from 'framer-motion';
 
+import type { DISPLAY_MODE_CONFIG } from '@/lib/config/slides.config';
 import type { SlideType } from '@/lib/types/slides';
 
 import { SlideRenderer } from './slide-renderer';
@@ -9,6 +10,7 @@ import { SlideRenderer } from './slide-renderer';
 interface AnimatedSlideProps {
     slide: SlideType;
     direction: number;
+    animationConfig: (typeof DISPLAY_MODE_CONFIG)[keyof typeof DISPLAY_MODE_CONFIG];
 }
 
 const slideVariants: Variants = {
@@ -28,7 +30,7 @@ const slideVariants: Variants = {
     }),
 };
 
-export function AnimatedSlide({ slide, direction }: AnimatedSlideProps) {
+export function AnimatedSlide({ slide, direction, animationConfig }: AnimatedSlideProps) {
     return (
         <motion.div
             custom={direction}
@@ -37,8 +39,12 @@ export function AnimatedSlide({ slide, direction }: AnimatedSlideProps) {
             animate='center'
             exit='exit'
             transition={{
-                x: { type: 'spring', stiffness: 300, damping: 30 },
-                opacity: { duration: 0.5 },
+                x: {
+                    type: 'spring',
+                    stiffness: animationConfig.springStiffness,
+                    damping: animationConfig.springDamping,
+                },
+                opacity: { duration: animationConfig.opacityDuration },
             }}
             className='absolute inset-0'
         >

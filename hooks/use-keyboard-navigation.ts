@@ -4,9 +4,15 @@ interface UseKeyboardNavigationProps {
     onPrevious: () => void;
     onNext: () => void;
     onToggleAutoPlay: () => void;
+    onToggleSpeedMode?: () => void;
 }
 
-export function useKeyboardNavigation({ onPrevious, onNext, onToggleAutoPlay }: UseKeyboardNavigationProps) {
+export function useKeyboardNavigation({
+    onPrevious,
+    onNext,
+    onToggleAutoPlay,
+    onToggleSpeedMode,
+}: UseKeyboardNavigationProps) {
     useEffect(() => {
         const handleKeyPress = (e: KeyboardEvent) => {
             if (e.key === 'ArrowLeft') {
@@ -16,10 +22,13 @@ export function useKeyboardNavigation({ onPrevious, onNext, onToggleAutoPlay }: 
             } else if (e.key === ' ') {
                 e.preventDefault();
                 onToggleAutoPlay();
+            } else if (e.key.toLocaleLowerCase() === 'm' && onToggleSpeedMode) {
+                e.preventDefault();
+                onToggleSpeedMode();
             }
         };
 
         window.addEventListener('keydown', handleKeyPress);
         return () => window.removeEventListener('keydown', handleKeyPress);
-    }, [onPrevious, onNext, onToggleAutoPlay]);
+    }, [onPrevious, onNext, onToggleAutoPlay, onToggleSpeedMode]);
 }

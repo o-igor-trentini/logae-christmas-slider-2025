@@ -25,6 +25,10 @@ export function SlideControls({ isVisible }: SlideControlsProps) {
                     <span className='px-2 py-0.5 rounded bg-white/10 font-mono text-xs'>ESPAÇO</span>
                     <span>Pausar/Retomar</span>
                 </p>
+                <p className='flex items-center gap-2'>
+                    <span className='px-2 py-0.5 rounded bg-white/10 font-mono text-xs'>M</span>
+                    <span>Alternar Velocidade</span>
+                </p>
             </div>
         </motion.div>
     );
