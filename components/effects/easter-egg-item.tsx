@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 import { EasterEggType } from '@/lib/constants/easter-eggs';
+import { isVideoFile } from '@/lib/utils/media-type';
 
 interface FloatingEasterEgg {
     id: string;
@@ -58,13 +59,24 @@ export function EasterEggItem({ egg }: EasterEggItemProps) {
                 </div>
             ) : egg.type === EasterEggType.Image ? (
                 <div className='relative w-40 h-40 drop-shadow-lg'>
-                    <Image
-                        src={egg.content || '/placeholder.svg'}
-                        alt='Easter egg'
-                        fill
-                        className='object-contain'
-                        unoptimized
-                    />
+                    {isVideoFile(egg.content) ? (
+                        <video
+                            src={egg.content}
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            className='w-full h-full object-contain rounded-lg'
+                        />
+                    ) : (
+                        <Image
+                            src={egg.content || '/placeholder.svg'}
+                            alt='Easter egg'
+                            fill
+                            className='object-contain'
+                            unoptimized
+                        />
+                    )}
                 </div>
             ) : (
                 <div className='px-4 py-2 bg-linear-to-r from-(--logae-primary)/40 to-(--logae-secondary)/40 rounded-full backdrop-blur-sm border border-(--logae-primary)/50 whitespace-nowrap'>
