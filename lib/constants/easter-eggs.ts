@@ -33,6 +33,7 @@ export const EASTER_EGGS: EasterEgg[] = [
     { type: EasterEggType.Phrase, content: 'Testa em guia anônima 👍' },
     { type: EasterEggType.Phrase, content: 'dps que o cara mata o cara o cara fica como errado' },
     { type: EasterEggType.Phrase, content: 'prefere uma caganera ou o sistema funcionando?' },
+    { type: EasterEggType.Phrase, content: 'Na minha máquina funciona 🤡' },
 
     { type: EasterEggType.Image, content: './easter-eggs/guia-anonima.png' },
     { type: EasterEggType.Image, content: './easter-eggs/adailton-1.png' },
